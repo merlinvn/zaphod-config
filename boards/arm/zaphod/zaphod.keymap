@@ -9,32 +9,585 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define NAV_L 1
-#define OTH_L 2
-#define NUM_L 3
-#define SYM_L 4
-#define MED_L 5
-#define FUN_L 6
+#define BASE_L 0
+#define QW_L 1
+#define VI_L 2
+#define NAV_L 3
+#define OTH_L 4
+#define NUM_L 5
+#define SYM_L 6
+#define FUN_L 7
+#define MED_L 8
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-&lt { quick_tap_ms = <200>; };
+//&lt { quick_tap_ms = <200>; };
+&sl { release-after-ms = <500>; };
+&sk {
+    release-after-ms = <500>;
+    quick-release;
+};
+
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
+};
+
+&key_repeat {
+    usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
+};
+
+&leader {
+    timeout-ms = <500>;
+};
 
 / {
+    leader_sequences {
+      compatible = "zmk,leader-sequences";
+      seq_esc {
+        key-positions = <0 1>;
+        bindings = <&kp ESC>;
+      };
+    };
+
+    macro {
+      ZMK_MACRO(ng_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp N &kp G>;
+      )
+      ZMK_MACRO(gh_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp G &kp H>;
+      )
+      ZMK_MACRO(nh_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp N &kp H>;
+      )
+      ZMK_MACRO(ngh_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp N &kp G &kp H>;
+      )
+      ZMK_MACRO(th_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp T &kp H>;
+      )
+      ZMK_MACRO(tr_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp T &kp R>;
+      )
+      ZMK_MACRO(ph_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp P &kp H>;
+      )
+      ZMK_MACRO(ch_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp C &kp H>;
+      )
+      ZMK_MACRO(uow_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp U &kp O &kp W>;
+      )
+      ZMK_MACRO(uoo_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp U &kp O &kp O>;
+      )
+      ZMK_MACRO(iee_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp I &kp E &kp E>;
+      )
+      ZMK_MACRO(yee_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp Y &kp E &kp E>;
+      )
+      ZMK_MACRO(owi_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp O &kp W &kp I>;
+      )
+       ZMK_MACRO(ooi_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp O &kp O &kp I>;
+      )
+      ZMK_MACRO(qu_macro,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp Q &kp U>;
+      )
+    };
     combos {
         compatible = "zmk,combos";
-
-        med_mo {
-	    timeout-ms = <50>;
-            key-positions = <30 31>;
-            bindings = <&mo MED_L>;
+  /*
+  med_mo {
+      timeout-ms = <50>;
+            key-positions = <30 33>;
+            bindings = <&sl MED_L>;
+      layers = <BASE_L QW_L VI_L>;
         };
+  */
 
-        fn_mo {
-	    timeout-ms = <50>;
-            key-positions = <32 33>;
-            bindings = <&mo FUN_L>;
+  meh_combo {
+      timeout-ms = <40>;
+            key-positions = <30 33>;
+            bindings = <&sk LS(LA(LCTRL))>;
+      layers = <BASE_L>;
+  };
+
+  leader_combo {
+      timeout-ms = <40>;
+            key-positions = <31 32>;
+            bindings = <&leader>;
+      layers = <BASE_L>;
+  };
+
+  /*
+  other_mo {
+      timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&sl OTH_L>;
+      layers = <0 1 2 3>;
         };
+        */
+  // top left
+  qu_combo1 {
+      timeout-ms = <40>;
+            key-positions = <1 2>;
+            bindings = <&qu_macro>;
+      layers = <BASE_L>;
+  };
 
+  dqt_combo {
+      timeout-ms = <30>;
+            key-positions = <2 3>;
+            bindings = <&kp DQT>;
+      layers = <BASE_L SYM_L>;
+  };
+
+  del_combo {
+      timeout-ms = <40>;
+            key-positions = <1 2 3>;
+            bindings = <&kp DEL>;
+      layers = <BASE_L>;
+  };
+
+  // top right
+  semi_combo {
+      timeout-ms = <40>;
+            key-positions = <6 7>;
+            bindings = <&kp SEMI>;
+      layers = <BASE_L SYM_L>;
+  };
+
+  ctrlBs_combo{
+      timeout-ms = <40>;
+            key-positions = <6 7 8>;
+            bindings = <&kp LC(BSPC)>;
+      layers = <BASE_L SYM_L>;
+  };
+
+  // home left
+  tab_combo {
+      timeout-ms = <30>;
+            key-positions = <11 12>;
+            bindings = <&kp TAB>;
+      layers = <BASE_L>;
+  };
+
+  tab_combo2 {
+      timeout-ms = <30>;
+            key-positions = <1 2>;
+            bindings = <&kp TAB>;
+      layers = <VI_L>;
+  };
+
+  esc_combo {
+      timeout-ms = <20>;
+            key-positions = <12 13>;
+            bindings = <&kp ESC>;
+      layers = <BASE_L>;
+  };
+
+  minus_combo {
+      timeout-ms = <30>;
+            key-positions = <11 13>;
+            bindings = <&kp MINUS>;
+      layers = <BASE_L SYM_L>;
+  };
+
+  // home right
+
+  colon_combo {
+      timeout-ms = <30>;
+            key-positions = <16 17>;
+            bindings = <&kp COLON>;
+      layers = <BASE_L>;
+  };
+  bspc_combo {
+      timeout-ms = <30>;
+            key-positions = <17 18>;
+            bindings = <&kp BSPC>;
+      layers = <BASE_L>;
+  };
+
+  under_combo {
+      timeout-ms = <30>;
+            key-positions = <16 18>;
+            bindings = <&kp UNDER>;
+      layers = <BASE_L>;
+  };
+
+  caps_combo {
+      timeout-ms = <50>;
+            key-positions = <12 17>;
+            bindings = <&caps_word>;
+      layers = <BASE_L>;
+  };
+
+  // bottom left
+  hash_combo {
+      timeout-ms = <40>;
+            key-positions = <21 22>;
+            bindings = <&kp HASH>;
+      layers = <BASE_L SYM_L>;
+  };
+
+  ex_combo {
+      timeout-ms = <40>;
+            key-positions = <22 23>;
+            bindings = <&kp EXCL>;
+      layers = <BASE_L SYM_L>;
+  };
+
+  // bottom right
+  qmark_combo {
+      timeout-ms = <30>;
+            key-positions = <26 27>;
+            bindings = <&kp QMARK>;
+      layers = <BASE_L SYM_L>;
+  };
+
+  star_combo {
+      timeout-ms = <30>;
+            key-positions = <27 28>;
+            bindings = <&kp STAR>;
+      layers = <BASE_L SYM_L>;
+  };
+
+  // modifier left
+  lctrl_combo {
+      timeout-ms = <40>;
+            key-positions = <31 12>;
+            bindings = <&sk LCTRL>;
+            layers = <BASE_L>;
+  };
+
+  lshft_combo {
+      timeout-ms = <40>;
+            key-positions = <31 13>;
+            bindings = <&sk LSHFT>;
+      layers = <BASE_L>;
+  };
+
+  lalt_combo1 {
+      timeout-ms = <40>;
+            key-positions = <31 11>;
+            bindings = <&sk LALT>;
+      layers = <BASE_L>;
+  };
+
+  lgui_combo {
+      timeout-ms = <40>;
+            key-positions = <31 10>;
+            bindings = <&sk LGUI>;
+      layers = <BASE_L>;
+  };
+
+  lshft_ctrl_combo {
+      timeout-ms = <40>;
+            key-positions = <31 12 13>;
+            bindings = <&sk LS(LCTRL)>;
+      layers = <BASE_L>;
+  };
+
+  lshft_alt_combo {
+      timeout-ms = <40>;
+            key-positions = <31 11 13>;
+            bindings = <&sk LS(LALT)>;
+      layers = <BASE_L>;
+  };
+
+  lshft_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <31 10 13>;
+            bindings = <&sk LS(LGUI)>;
+      layers = <BASE_L>;
+  };
+
+  lctrl_alt_combo {
+      timeout-ms = <40>;
+            key-positions = <31 11 12>;
+            bindings = <&sk LA(LCTRL)>;
+      layers = <BASE_L>;
+  };
+
+  lctrl_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <31 10 12>;
+            bindings = <&sk LC(LGUI)>;
+      layers = <BASE_L>;
+  };
+
+  lalt_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <31 10 11>;
+            bindings = <&sk LA(LGUI)>;
+      layers = <BASE_L>;
+  };
+
+  lshift_ctrl_alt_combo {
+      timeout-ms = <40>;
+            key-positions = <31 11 12 13>;
+            bindings = <&sk LS(LC(LALT))>;
+      layers = <BASE_L>;
+  };
+
+  lshift_ctrl_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <31 10 12 13>;
+            bindings = <&sk LS(LC(LGUI))>;
+      layers = <BASE_L>;
+  };
+
+  lshift_alt_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <31 10 11 13>;
+            bindings = <&sk LS(LA(LGUI))>;
+      layers = <BASE_L>;
+  };
+
+  lcrtl_alt_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <31 10 11 12>;
+            bindings = <&sk LC(LA(LGUI))>;
+      layers = <BASE_L>;
+  };
+
+  // modifier right
+
+  lalt_combo2 {
+      timeout-ms = <40>;
+            key-positions = <32 18>;
+            bindings = <&sk LALT>;
+      layers = <BASE_L>;
+  };
+
+  rshft_combo {
+      timeout-ms = <40>;
+            key-positions = <32 16>;
+            bindings = <&sk RSHFT>;
+      layers = <BASE_L>;
+  };
+
+        rctrl_combo {
+      timeout-ms = <40>;
+            key-positions = <32 17>;
+            bindings = <&sk RCTRL>;
+      layers = <BASE_L>;
+  };
+
+  rgui_combo {
+      timeout-ms = <40>;
+            key-positions = <32 19>;
+            bindings = <&sk RGUI>;
+      layers = <BASE_L>;
+  };
+
+  rshft_ctrl_combo {
+      timeout-ms = <40>;
+            key-positions = <32 16 17>;
+            bindings = <&sk RS(RCTRL)>;
+      layers = <BASE_L>;
+  };
+
+  rshft_alt_combo {
+      timeout-ms = <40>;
+            key-positions = <32 16 18>;
+            bindings = <&sk RS(LALT)>;
+      layers = <BASE_L>;
+  };
+
+  rshft_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <32 16 19>;
+            bindings = <&sk RS(RGUI)>;
+      layers = <BASE_L>;
+  };
+
+  rctrl_alt_combo {
+      timeout-ms = <40>;
+            key-positions = <32 17 18>;
+            bindings = <&sk RC(LALT)>;
+      layers = <BASE_L>;
+  };
+
+  rctrl_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <32 17 19>;
+            bindings = <&sk RC(LGUI)>;
+      layers = <BASE_L>;
+  };
+
+  rgui_alt_combo {
+      timeout-ms = <40>;
+            key-positions = <32 18 19>;
+            bindings = <&sk LA(RGUI)>;
+      layers = <BASE_L>;
+  };
+
+  rshift_ctrl_alt_combo {
+      timeout-ms = <40>;
+            key-positions = <32 16 17 18>;
+            bindings = <&sk RS(RC(LALT))>;
+      layers = <BASE_L>;
+  };
+
+  rshift_ctrl_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <32 16 17 19>;
+            bindings = <&sk RS(RC(RGUI))>;
+      layers = <BASE_L>;
+  };
+
+  rshift_alt_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <32 16 18 19>;
+            bindings = <&sk RS(LA(RGUI))>;
+      layers = <BASE_L>;
+  };
+
+  rcrtl_alt_gui_combo {
+      timeout-ms = <40>;
+            key-positions = <32 17 18 19>;
+            bindings = <&sk RC(LA(RGUI))>;
+      layers = <BASE_L>;
+  };
+/*
+  // vietnamese
+  ngh_combo {
+      timeout-ms = <40>;
+            key-positions = <11 12 13>;
+            bindings = <&ngh_macro>;
+      layers = <VI_L>;
+  };
+
+  ng_combo {
+      timeout-ms = <40>;
+            key-positions = <11 12>;
+            bindings = <&ng_macro>;
+      layers = <VI_L>;
+  };
+
+  gh_combo {
+      timeout-ms = <40>;
+            key-positions = <11 13>;
+            bindings = <&gh_macro>;
+      layers = <VI_L>;
+  };
+
+  nh_combo {
+      timeout-ms = <40>;
+            key-positions = <12 13>;
+            bindings = <&nh_macro>;
+      layers = <VI_L>;
+  };
+
+  th_combo {
+      timeout-ms = <40>;
+            key-positions = <21 13>;
+            bindings = <&th_macro>;
+      layers = <VI_L>;
+  };
+
+  tr_combo {
+      timeout-ms = <40>;
+            key-positions = <21 22>;
+            bindings = <&tr_macro>;
+      layers = <VI_L>;
+  };
+
+  qu_combo {
+      timeout-ms = <40>;
+            key-positions = <22 23>;
+            bindings = <&qu_macro>;
+      layers = <VI_L>;
+  };
+
+  ph_combo {
+      timeout-ms = <40>;
+            key-positions = <1 13>;
+            bindings = <&ph_macro>;
+      layers = <VI_L>;
+  };
+
+  ch_combo {
+      timeout-ms = <40>;
+            key-positions = <22 13>;
+            bindings = <&ch_macro>;
+      layers = <VI_L>;
+  };
+
+  iee_combo {
+      timeout-ms = <40>;
+            key-positions = <6 7>;
+            bindings = <&iee_macro>;
+      layers = <VI_L>;
+  };
+
+  uow_combo {
+      timeout-ms = <30>;
+            key-positions = <16 17>;
+            bindings = <&uow_macro>;
+      layers = <VI_L>;
+  };
+
+  owi_combo {
+      timeout-ms = <30>;
+            key-positions = <17 18>;
+            bindings = <&owi_macro>;
+      layers = <VI_L>;
+  };
+
+  yee_combo {
+      timeout-ms = <40>;
+            key-positions = <7 8>;
+            bindings = <&yee_macro>;
+      layers = <VI_L>;
+  };
+
+  uoo_combo {
+      timeout-ms = <40>;
+            key-positions = <26 27>;
+            bindings = <&uoo_macro>;
+      layers = <VI_L>;
+  };
+
+  ooi_combo {
+      timeout-ms = <40>;
+            key-positions = <27 28>;
+            bindings = <&ooi_macro>;
+      layers = <VI_L>;
+  };
+  */
     };
 
     behaviors {
@@ -46,35 +599,104 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+  bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+
+   lhm: left_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <0>;
+      bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>;    // <---[[right-hand keys]]
+        };
+
+   rhm: right_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <0>;
+      bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;    // <---[[left-hand keys]]
+        };
+
+  comexc: comma_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_EXCLAMATION";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+  dotque: dot_question {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_QUEST";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            label = "Base";
+        neo_layer {
+            label = "NeoE";
             bindings = <
-                &kp Q      &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I       &kp O      &kp P
-                &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F    &kp G         &kp H            &hm RSHFT J    &hm RCTRL K &hm LALT L &hm LGUI QUOT
-                &kp Z      &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH
-                                                  &lt NAV_L TAB  &lt OTH_L RET &lt NUM_L SPACE  &lt SYM_L BKSP
+                &kp Q      &kp W     &kp F     &kp P          &kp B                &kp Z    &kp L  &kp U   &kp Y       &kp RET
+                &kp A      &kp R     &kp S     &lt NUM_L T    &kp G                &kp M    &kp N  &kp H   &kp I       &kp O
+                &kp SQT    &kp X     &kp C     &kp D          &kp V                &kp FSLH &kp J  &kp K   &kp COMMA   &kp DOT
+                                                  &sl NUM_L  &lt NAV_L SPACE     &lt FUN_L E  &sl SYM_L
             >;
         };
 
-        nav_layer {
+       qwerty_layer {
+            label = "QWERTY";
+            bindings = <
+                &kp Q      &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I           &kp O        &kp P
+                &kp A      &kp S      &kp D       &kp F          &kp G         &kp H            &kp J          &kp K           &kp L        &kp SQT
+                &kp Z      &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &kp COMMA       &kp DOT      &kp FSLH
+                                                  &kp ESC        &kp SPACE     &kp BSPC         &kp RET
+            >;
+        };
+
+       vie_layer {
+            label = "TELEX";
+            bindings = <
+                &kp Q       &kp P       &kp M          &kp L           &kp B         &kp Z            &kp R           &kp E          &kp U      &kp FSLH
+                &kp I       &kp G       &kp N          &lt NUM_L H     &kp X         &kp F            &kp S           &kp A          &kp W         &kp O
+                &lhm LGUI Y &lhm LALT T &lhm LCTRL C   &lhm LSHFT D    &bhm SPACE V         &kp BSPC         &rhm RSHFT J    &rhm RCTRL K &rhm LALT DOT &rhm RGUI COMMA
+                                                  &lt NUM_L ESC  &lt NAV_L SPACE     &sl SYM_L   &lt SYM_L RET
+            >;
+        };
+
+       nav_layer {
             label = "Nav";
             bindings = <
-                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans      &trans     &trans
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp LARW       &kp DARW    &kp UARW   &kp RARW
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp HOME       &kp PG_DN   &kp PG_UP  &kp END
-                                                  &trans          &trans       &kp ESC          &kp DEL
+                &none            &none         &none          &none          &kp CAPS        &kp PG_UP      &kp HOME     &kp UARW     &kp END     &kp INS
+                &sk LGUI         &sk LALT      &sk LCTRL      &sk LSHFT      &none          &kp PG_DN      &kp LARW     &kp DARW     &kp RARW    &kp K_APP
+                &hm LGUI N9      &hm LALT N8   &hm LCTRL N7   &hm LSHFT  N6  &kp N0          &kp N5         &hm RSHFT N1 &hm RCTRL N2 &hm LALT N3 &hm RGUI N4
+                                                      &trans          &trans       &kp LG(SPACE)       &kp RET
             >;
         };
 
         other_layer {
             label = "Other";
             bindings = <
-                &trans	   &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &bt BT_CLR
+                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &bt BT_CLR
                 &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &trans
                 &trans     &trans     &trans      &trans          &trans       &bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
                                                   &trans          &trans       &trans           &trans
@@ -84,42 +706,43 @@
         num_layer {
             label = "Num";
             bindings = <
-                &kp LBKT   &kp N7     &kp N8      &kp N9          &kp RBKT      &trans          &trans         &trans      &trans     &trans
-                &kp SEMI   &kp N4     &kp N5      &kp N6          &kp EQUAL     &trans          &trans         &trans      &trans     &trans
-                &kp GRAVE  &kp N1     &kp N2      &kp N3          &kp BSLH      &trans          &trans         &trans      &trans     &trans
-                                                  &kp N0          &kp MINUS     &trans          &trans
+                &none          &none        &none      &none       &none              &kp KP_MULTIPLY   &kp N7     &kp N8      &kp N9          &kp KP_DIVIDE
+                &sk LGUI       &sk LALT     &sk LCTRL  &sk LSHFT   &none              &kp KP_PLUS       &kp N4     &kp N5      &kp N6          &kp EQUAL
+                &none          &none        &none      &none       &none              &kp KP_MINUS      &kp N1     &kp N2      &kp N3          &kp DOT
+                                                       &kp COMMA   &kp SPACE          &kp N0         &mo MED_L
             >;
         };
 
         sym_layer {
             label = "Sym";
             bindings = <
-                &kp LBRC     &kp LS(N7)  &kp LS(N8)  &kp LS(N9) &kp RBRC        &trans &trans   &trans    &trans    &trans
-                &kp COLON    &kp LS(N4)  &kp LS(N5)  &kp LS(N6) &kp PLUS        &trans &trans   &trans    &trans    &trans
-                &kp TILDE    &kp LS(N1)  &kp LS(N2)  &kp LS(N3) &kp LS(BSLH)    &trans &trans   &trans    &trans    &trans
-                                                   &kp LS(N0) &kp UNDER         &trans &trans
-            >;
-        };
-
-        media_layer {
-            label = "Media";
-            bindings = <
-                &trans	   &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &trans
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp C_PREV     &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
-                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &trans
-                                                  &trans          &trans       &kp C_STOP       &kp C_PLAY_PAUSE
+                &kp TILDE     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT        &none      &kp CARET       &kp AMPS     &kp DLLR     &kp QMARK
+                &kp SEMI      &kp EQUAL    &kp LPAR       &kp RPAR      &kp PLUS         &kp COLON  &sk RSHFT       &sk RCTRL    &sk LALT     &sk RGUI
+                &kp SQT       &kp BSLH     &kp LBKT       &kp RBKT      &kp PIPE         &kp FSLH   &kp LT          &kp GT       &kp UNDER    &kp GRAVE
+                                                          &mo MED_L    &kp SPACE       &trans    &trans
             >;
         };
 
         fun_layer {
             label = "Fun";
             bindings = <
-                &kp F12     &kp F7     &kp F8      &kp F9     &kp PSCRN         &trans          &trans         &trans      &trans     &trans
-                &kp F11     &kp F4     &kp F5      &kp F6     &kp SLCK          &trans          &trans         &trans      &trans     &trans
-                &kp F10     &kp F1     &kp F2      &kp F3     &kp PAUSE_BREAK   &trans          &trans         &trans      &trans     &trans
-                                                   &none      &none             &trans          &trans
+                &kp F10     &kp F7    &kp F8     &kp F9     &kp PSCRN            &none    &none       &none       &none       &none
+                &kp F11     &kp F4    &kp F5     &kp F6     &kp SLCK             &none    &sk RSHFT   &sk RCTRL   &sk LALT    &sk RGUI
+                &kp F12     &kp F1    &kp F2     &kp F3     &kp PAUSE_BREAK      &none    &none       &none       &none       &none
+                                                            &trans  &trans      &trans  &mo MED_L
             >;
         };
+
+        media_layer {
+            label = "Media";
+            bindings = <
+                &to 0        &to 1         &to 2         &to 3      &none                  &none       &trans       &trans             &trans       &trans
+                &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &none       &kp C_PREV   &kp C_VOL_DN       &kp C_VOL_UP &kp C_NEXT
+                &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none      &bt BT_CLR             &none       &kp C_STOP   &kp C_PLAY_PAUSE   &trans       &trans
+                                                          &trans     &trans          &trans      &trans
+            >;
+        };
+
     };
 };
 
