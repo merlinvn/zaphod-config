@@ -4,16 +4,22 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: petejohanson
       url-base: https://github.com/petejohanson
-    - name: leaderkey
+    - name: nickconway
       url-base: https://github.com/nickconway
+    - name: merlinvn
+      url-base: https://github.com/merlinvn
   projects:
     # - name: zmk
     #   remote: zmkfirmware
     #   revision: main
     #   import: app/west.yml
+    # - name: zmk
+    #   remote: nickconway
+    #   revision: leader-key
+    #   import: app/west.yml
     - name: zmk
-      remote: leaderkey
-      revision: leader-key
+      remote: nickconway
+      revision: smart-interrupt
       import: app/west.yml
   self:
     path: config
