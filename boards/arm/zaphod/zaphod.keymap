@@ -166,10 +166,10 @@
       layers = <BASE_L>;
   };
 
-  dqt_combo {
+  exl_combo {
       timeout-ms = <30>;
             key-positions = <2 3>;
-            bindings = <&kp DQT>;
+            bindings = <&kp EXCL>;
       layers = <BASE_L SYM_L>;
   };
 
@@ -181,10 +181,10 @@
   };
 
   // top right
-  semi_combo {
+  qmark_combo {
       timeout-ms = <40>;
             key-positions = <6 7>;
-            bindings = <&kp SEMI>;
+            bindings = <&kp QMARK>;
       layers = <BASE_L SYM_L>;
   };
 
@@ -217,13 +217,6 @@
       layers = <BASE_L>;
   };
 
-  minus_combo {
-      timeout-ms = <30>;
-            key-positions = <11 13>;
-            bindings = <&kp MINUS>;
-      layers = <BASE_L SYM_L>;
-  };
-
   // home right
 
   colon_combo {
@@ -232,6 +225,7 @@
             bindings = <&kp COLON>;
       layers = <BASE_L>;
   };
+
   bspc_combo {
       timeout-ms = <30>;
             key-positions = <17 18>;
@@ -239,16 +233,9 @@
       layers = <BASE_L>;
   };
 
-  under_combo {
-      timeout-ms = <30>;
-            key-positions = <16 18>;
-            bindings = <&kp UNDER>;
-      layers = <BASE_L>;
-  };
-
   caps_combo {
       timeout-ms = <50>;
-            key-positions = <12 17>;
+            key-positions = <16 18>;
             bindings = <&caps_word>;
       layers = <BASE_L>;
   };
@@ -261,18 +248,18 @@
       layers = <BASE_L SYM_L>;
   };
 
-  ex_combo {
+  minus_combo {
       timeout-ms = <40>;
             key-positions = <22 23>;
-            bindings = <&kp EXCL>;
+            bindings = <&kp MINUS>;
       layers = <BASE_L SYM_L>;
   };
 
   // bottom right
-  qmark_combo {
+  under_combo {
       timeout-ms = <30>;
             key-positions = <26 27>;
-            bindings = <&kp QMARK>;
+            bindings = <&kp UNDER>;
       layers = <BASE_L SYM_L>;
   };
 
@@ -292,91 +279,91 @@
   };
 
   lshft_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 13>;
             bindings = <&sk LSHFT>;
       layers = <BASE_L>;
   };
 
   lalt_combo1 {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 11>;
             bindings = <&sk LALT>;
       layers = <BASE_L>;
   };
 
   lgui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 10>;
             bindings = <&sk LGUI>;
       layers = <BASE_L>;
   };
 
   lshft_ctrl_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 12 13>;
             bindings = <&sk LS(LCTRL)>;
       layers = <BASE_L>;
   };
 
   lshft_alt_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 11 13>;
             bindings = <&sk LS(LALT)>;
       layers = <BASE_L>;
   };
 
   lshft_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 10 13>;
             bindings = <&sk LS(LGUI)>;
       layers = <BASE_L>;
   };
 
   lctrl_alt_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 11 12>;
             bindings = <&sk LA(LCTRL)>;
       layers = <BASE_L>;
   };
 
   lctrl_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 10 12>;
             bindings = <&sk LC(LGUI)>;
       layers = <BASE_L>;
   };
 
   lalt_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 10 11>;
             bindings = <&sk LA(LGUI)>;
       layers = <BASE_L>;
   };
 
   lshift_ctrl_alt_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 11 12 13>;
             bindings = <&sk LS(LC(LALT))>;
       layers = <BASE_L>;
   };
 
   lshift_ctrl_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 10 12 13>;
             bindings = <&sk LS(LC(LGUI))>;
       layers = <BASE_L>;
   };
 
   lshift_alt_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 10 11 13>;
             bindings = <&sk LS(LA(LGUI))>;
       layers = <BASE_L>;
   };
 
   lcrtl_alt_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <30 10 11 12>;
             bindings = <&sk LC(LA(LGUI))>;
       layers = <BASE_L>;
@@ -385,91 +372,91 @@
   // modifier right
 
   lalt_combo2 {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 18>;
             bindings = <&sk LALT>;
       layers = <BASE_L>;
   };
 
   rshft_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 16>;
             bindings = <&sk RSHFT>;
       layers = <BASE_L>;
   };
 
         rctrl_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 17>;
             bindings = <&sk RCTRL>;
       layers = <BASE_L>;
   };
 
   rgui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 19>;
             bindings = <&sk RGUI>;
       layers = <BASE_L>;
   };
 
   rshft_ctrl_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 16 17>;
             bindings = <&sk RS(RCTRL)>;
       layers = <BASE_L>;
   };
 
   rshft_alt_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 16 18>;
             bindings = <&sk RS(LALT)>;
       layers = <BASE_L>;
   };
 
   rshft_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 16 19>;
             bindings = <&sk RS(RGUI)>;
       layers = <BASE_L>;
   };
 
   rctrl_alt_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 17 18>;
             bindings = <&sk RC(LALT)>;
       layers = <BASE_L>;
   };
 
   rctrl_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 17 19>;
             bindings = <&sk RC(LGUI)>;
       layers = <BASE_L>;
   };
 
   rgui_alt_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 18 19>;
             bindings = <&sk LA(RGUI)>;
       layers = <BASE_L>;
   };
 
   rshift_ctrl_alt_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 16 17 18>;
             bindings = <&sk RS(RC(LALT))>;
       layers = <BASE_L>;
   };
 
   rshift_ctrl_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 16 17 19>;
             bindings = <&sk RS(RC(RGUI))>;
       layers = <BASE_L>;
   };
 
   rshift_alt_gui_combo {
-      timeout-ms = <40>;
+      timeout-ms = <25>;
             key-positions = <33 16 18 19>;
             bindings = <&sk RS(LA(RGUI))>;
       layers = <BASE_L>;
@@ -614,9 +601,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <0>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>;    // <---[[right-hand keys]]
         };
@@ -625,9 +612,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "RIGHT_POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <0>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;    // <---[[left-hand keys]]
         };
@@ -683,7 +670,7 @@
             label = "NeoE";
             bindings = <
                 &kp Q      &kp W     &kp F     &kp P          &kp B                &kp Z    &kp L  &kp U   &kp Y       &kp RET
-                &kp A      &kp R     &kp S     &lt NUM_L T    &kp G                &kp M    &kp N  &kp H   &kp I       &kp O
+                &kp A      &kp R     &kp S     &kp T          &kp G                &kp M    &kp N  &kp H   &kp I       &kp O
                 &kp SQT    &kp X     &kp C     &kp D          &kp V                &kp FSLH &kp J  &kp K   &kp COMMA   &kp DOT
                                                   &sl NUM_L  &lt NAV_L SPACE     &lt FUN_L E  &sl SYM_L
             >;
@@ -712,9 +699,9 @@
        nav_layer {
             label = "Nav";
             bindings = <
-                &gui_swap        &alt_swap        &kp LC(LS(TAB))  &kp LC(TAB)      &grave_swap          &kp K_APP      &kp HOME     &kp UARW     &kp END     &kp DEL
-                &sk LGUI         &sk LALT         &sk LCTRL        &sk LSHFT        &kp LG(LC(LA(DARW))) &kp CAPS      &kp LARW     &kp DARW     &kp RARW    &kp BSPC
-                &kp LG(LC(LARW)) &kp LG(LC(RARW)) &kp LG(LA(LARW)) &kp LG(LA(RARW)) &kp LC(LA(DARW))     &kp INS          &kp PG_DN    &kp PG_UP    &none       &kp RET
+                &gui_swap        &alt_swap        &kp LC(LS(TAB))  &kp LC(TAB)      &grave_swap          &kp K_APP      &kp HOME     &kp UARW     &kp END     &kp RET
+                &sk LGUI         &sk LALT         &sk LCTRL        &sk LSHFT        &kp LG(LC(LA(DARW))) &kp CAPS       &kp LARW     &kp DARW     &kp RARW    &kp BSPC
+                &kp LG(LC(LARW)) &kp LG(LC(RARW)) &kp LG(LA(LARW)) &kp LG(LA(RARW)) &kp LC(LA(DARW))     &kp INS        &kp PG_DN    &kp PG_UP    &none       &kp RC(BSLH)
                                                       &trans          &trans       &kp LG(SPACE)       &kp RET
             >;
         };
@@ -732,19 +719,19 @@
         num_layer {
             label = "Num";
             bindings = <
-                &none          &none        &none      &none       &none              &kp KP_MULTIPLY   &kp N7     &kp N8      &kp N9          &kp KP_DIVIDE
+                &none          &none        &none      &none       &none              &kp KP_MULTIPLY   &kp N7     &kp N8      &kp N9          &kp RET
                 &sk LGUI       &sk LALT     &sk LCTRL  &sk LSHFT   &none              &kp KP_PLUS       &kp N4     &kp N5      &kp N6          &kp EQUAL
                 &none          &none        &none      &none       &none              &kp KP_MINUS      &kp N1     &kp N2      &kp N3          &kp DOT
-                                                       &kp COMMA   &kp SPACE          &kp N0         &mo MED_L
+                                                       &trans      &kp SPACE          &kp N0         &mo MED_L
             >;
         };
 
         sym_layer {
             label = "Sym";
             bindings = <
-                &kp TILDE     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT        &none      &kp CARET       &kp AMPS     &kp DLLR     &kp QMARK
+                &kp TILDE     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT        &kp STAR   &kp CARET       &kp AMPS     &kp DLLR     &kp RET
                 &kp SEMI      &kp EQUAL    &kp LPAR       &kp RPAR      &kp PLUS         &kp COLON  &sk RSHFT       &sk RCTRL    &sk LALT     &sk RGUI
-                &kp SQT       &kp BSLH     &kp LBKT       &kp RBKT      &kp PIPE         &kp FSLH   &kp LT          &kp GT       &kp UNDER    &kp GRAVE
+                &kp DQT       &kp BSLH     &kp LBKT       &kp RBKT      &kp PIPE         &kp QMARK  &kp LT          &kp GT       &kp UNDER    &kp GRAVE
                                                           &mo MED_L    &kp SPACE       &trans    &trans
             >;
         };
