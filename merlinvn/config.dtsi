@@ -1,0 +1,128 @@
+#define BASE_L 0
+#define QW_L 1
+#define VI_L 2
+#define NAV_L 3
+#define OTH_L 4
+#define NUM_L 5
+#define SYM_L 6
+#define FUN_L 7
+#define MED_L 8
+
+#define LT2 30
+#define LT1 31
+#define RT1 32
+#define RT2 33
+
+#define TL_PINKY 0
+#define TL_RING 1
+#define TL_MIDDLE 2
+#define TL_INDEX 3
+
+#define TR_INDEX 6
+#define TR_MIDDLE 7
+#define TR_RING 8
+#define TR_PINKY 9
+
+#define ML_PINKY 10
+#define ML_RING 11
+#define ML_MIDDLE 12
+#define ML_INDEX 13
+
+#define MR_INDEX 16
+#define MR_MIDDLE 17
+#define MR_RING 18
+#define MR_PINKY 19
+
+#define BL_PINKY 20
+#define BL_RING 21
+#define BL_MIDDLE 22
+#define BL_INDEX 23
+
+#define BR_INDEX 26
+#define BR_MIDDLE 27
+#define BR_RING 28
+#define BR_PINKY 29
+
+#define TL_MAIN &kp Q    &kp W  &kp F  &kp P      &kp B
+#define ML_MAIN &kp A    &kp R  &kp S  &kp T      &kp G
+#define BL_MAIN &kp SQT  &kp X  &kp C  &kp D      &kp V
+#define TR_MAIN &kp Z    &kp L  &kp U  &kp Y      &kp RET
+#define MR_MAIN &kp M    &kp N  &kp H  &kp I      &kp O
+#define BR_MAIN &kp FSLH &kp J  &kp K  &kp COMMA  &kp DOT
+
+#define THUMBL_MAIN &sl NUM_L  &lt NAV_L SPACE
+#define THUMBR_MAIN &lt FUN_L E  &sl SYM_L
+
+
+#define TL_NAV &gui_swap        &alt_swap        &kp LC(LS(TAB))  &kp LC(TAB)      &grave_swap
+#define ML_NAV &sk LGUI         &sk LALT         &sk LCTRL        &sk LSHFT        &kp LG(LC(LA(DARW)))
+#define BL_NAV &kp LG(LC(LARW)) &kp LG(LC(RARW)) &kp LG(LA(LARW)) &kp LG(LA(RARW)) &kp LC(LA(DARW))
+#define TR_NAV &kp K_APP  &kp HOME  &kp UARW  &kp END  &kp RET
+#define MR_NAV &kp CAPS  &kp LARW  &kp DARW  &kp RARW  &kp BSPC
+#define BR_NAV &kp INS  &kp PG_DN  &kp PG_UP  &none  &kp RC(BSLH)
+
+#define THUMBL_NAV &trans          &trans
+#define THUMBR_NAV &kp LG(SPACE)   &kp RET
+
+
+#define TL_NUM &none     &none     &none      &none      &none
+#define ML_NUM &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &none
+#define BL_NUM &none     &none     &none      &none      &none
+#define TR_NUM &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp RET
+#define MR_NUM &kp KP_PLUS      &kp N4  &kp N5  &kp N6  &kp EQUAL
+#define BR_NUM &kp KP_MINUS     &kp N1  &kp N2  &kp N3  &kp DOT
+
+#define THUMBL_NUM &trans      &kp SPACE
+#define THUMBR_NUM &kp N0         &mo MED_L
+
+
+#define TL_SYM &kp GRAVE     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT
+#define ML_SYM &kp SEMI      &kp EQUAL    &kp LPAR       &kp RPAR      &kp PLUS
+#define BL_SYM &kp DQT       &kp BSLH     &kp LBKT       &kp RBKT      &kp PIPE
+#define TR_SYM &kp STAR   &kp CARET       &kp AMPS     &kp DLLR     &kp RET
+#define MR_SYM &kp COLON  &sk RSHFT       &sk RCTRL    &sk LALT     &sk RGUI
+#define BR_SYM &kp QMARK  &kp LT          &kp GT       &kp UNDER    &kp TILDE
+
+#define THUMBL_SYM &mo MED_L    &kp SPACE
+#define THUMBR_SYM &trans    &trans
+
+
+#define TL_FUN &kp F10     &kp F7    &kp F8     &kp F9     &kp PSCRN
+#define ML_FUN &kp F11     &kp F4    &kp F5     &kp F6     &kp SLCK
+#define BL_FUN &kp F12     &kp F1    &kp F2     &kp F3     &kp PAUSE_BREAK
+#define TR_FUN &none    &none       &none       &none       &none
+#define MR_FUN &none    &sk RSHFT   &sk RCTRL   &sk LALT    &sk RGUI
+#define BR_FUN &none    &none       &none       &none       &kp RC(BSLH)
+
+#define THUMBL_FUN &trans      &trans
+#define THUMBR_FUN &kp K_APP   &trans
+
+
+ #define TL_MED &to 0         &to 1          &to 2         &to 3        &none
+ #define ML_MED &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4
+ #define BL_MED &out OUT_TOG  &out OUT_BLE   &out OUT_USB  &none        &bt BT_CLR
+ #define TR_MED &none     &none        &none              &none         &none
+ #define MR_MED &none     &kp C_MUTE   &kp C_VOL_DN       &kp C_VOL_UP  &none
+ #define BR_MED &none     &kp C_STOP   &kp C_PLAY_PAUSE   &kp C_PREV    &kp C_NEXT
+
+#define THUMBL_MED &trans      &trans
+#define THUMBR_MED &trans      &trans
+
+// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+// &lt { quick_tap_ms = <200>; };
+
+&sl { release-after-ms = <500>; };
+&sk {
+    release-after-ms = <500>;
+    quick-release;
+};
+
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
+};
+
+&key_repeat {
+    usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
+};
+
+

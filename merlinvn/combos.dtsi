@@ -1,0 +1,451 @@
+/ {
+  combos {
+    compatible = "zmk,combos";
+    /*
+    med_mo {
+        timeout-ms = <50>;
+              key-positions = <30 33>;
+              bindings = <&sl MED_L>;
+        layers = <BASE_L QW_L VI_L>;
+          };
+
+    meh_combo {
+        timeout-ms = <40>;
+              key-positions = <38 39>;
+              bindings = <&sk LS(LA(LCTRL))>;
+        layers = <BASE_L>;
+    };
+
+    leader_combo {
+        timeout-ms = <40>;
+              key-positions = <31 32>;
+              bindings = <&leader>;
+        layers = <BASE_L>;
+    };
+
+    other_mo {
+        timeout-ms = <50>;
+              key-positions = <31 32>;
+              bindings = <&sl OTH_L>;
+        layers = <0 1 2 3>;
+    };
+*/
+  // top left
+    qu_combo1 {
+        timeout-ms = <40>;
+              key-positions = <TL_RING TL_MIDDLE>;
+              bindings = <&qu_macro>;
+        layers = <BASE_L>;
+    };
+
+    exl_combo {
+        timeout-ms = <30>;
+              key-positions = <TL_MIDDLE TL_INDEX>;
+              bindings = <&kp EXCL>;
+        layers = <BASE_L SYM_L>;
+    };
+
+    del_combo {
+        timeout-ms = <40>;
+              key-positions = <TL_RING TL_MIDDLE TL_INDEX>;
+              bindings = <&kp DEL>;
+        layers = <BASE_L>;
+    };
+
+    // top right
+    qmark_combo {
+        timeout-ms = <40>;
+              key-positions = <TR_INDEX TR_MIDDLE>;
+              bindings = <&kp QMARK>;
+        layers = <BASE_L SYM_L>;
+    };
+
+    ctrlBs_combo{
+        timeout-ms = <40>;
+              key-positions = <TR_INDEX TR_MIDDLE TR_RING>;
+              bindings = <&kp LC(BSPC)>;
+        layers = <BASE_L SYM_L>;
+    };
+
+    // home left start at 12
+    tab_combo {
+        timeout-ms = <30>;
+              key-positions = <ML_RING ML_MIDDLE>;
+              bindings = <&kp TAB>;
+        layers = <BASE_L>;
+    };
+
+    tab_combo2 {
+        timeout-ms = <30>;
+              key-positions = <TL_RING TL_MIDDLE>;
+              bindings = <&kp TAB>;
+        layers = <VI_L>;
+    };
+
+    esc_combo {
+        timeout-ms = <20>;
+              key-positions = <ML_MIDDLE ML_INDEX>;
+              bindings = <&kp ESC>;
+        layers = <BASE_L>;
+    };
+
+    // home right
+
+    colon_combo {
+        timeout-ms = <30>;
+              key-positions = <MR_INDEX MR_MIDDLE>;
+              bindings = <&kp COLON>;
+        layers = <BASE_L>;
+    };
+
+    bspc_combo {
+        timeout-ms = <30>;
+              key-positions = <MR_MIDDLE MR_RING>;
+              bindings = <&kp BSPC>;
+        layers = <BASE_L>;
+    };
+
+    caps_combo {
+        timeout-ms = <50>;
+              key-positions = <MR_INDEX MR_RING>;
+              bindings = <&caps_word>;
+        layers = <BASE_L>;
+    };
+
+    // bottom left start at 24
+    hash_combo {
+        timeout-ms = <40>;
+              key-positions = <BL_RING BL_MIDDLE>;
+              bindings = <&kp HASH>;
+        layers = <BASE_L SYM_L>;
+    };
+
+    minus_combo {
+        timeout-ms = <40>;
+              key-positions = <BL_MIDDLE BL_INDEX>;
+              bindings = <&kp MINUS>;
+        layers = <BASE_L SYM_L>;
+    };
+
+    // bottom right
+    under_combo {
+        timeout-ms = <30>;
+              key-positions = <BR_INDEX BR_MIDDLE>;
+              bindings = <&kp UNDER>;
+        layers = <BASE_L SYM_L>;
+    };
+
+    star_combo {
+        timeout-ms = <30>;
+              key-positions = <BR_MIDDLE BR_RING>;
+              bindings = <&kp STAR>;
+        layers = <BASE_L SYM_L>;
+    };
+
+    // modifier left  thumb start at 36
+    lctrl_combo {
+        timeout-ms = <40>;
+              key-positions = <LT2 ML_MIDDLE>;
+              bindings = <&sk LCTRL>;
+              layers = <BASE_L>;
+    };
+
+    lshft_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_INDEX>;
+              bindings = <&sk LSHFT>;
+        layers = <BASE_L>;
+    };
+
+    lalt_combo1 {
+      timeout-ms = <25>;
+      key-positions = <LT2 ML_RING>;
+      bindings = <&sk LALT>;
+      layers = <BASE_L>;
+    };
+
+    lgui_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_PINKY>;
+              bindings = <&sk LGUI>;
+        layers = <BASE_L>;
+    };
+
+    lshft_ctrl_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_MIDDLE ML_INDEX>;
+              bindings = <&sk LS(LCTRL)>;
+        layers = <BASE_L>;
+    };
+
+    lshft_alt_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_RING ML_INDEX>;
+              bindings = <&sk LS(LALT)>;
+        layers = <BASE_L>;
+    };
+
+    lshft_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_PINKY ML_INDEX>;
+              bindings = <&sk LS(LGUI)>;
+        layers = <BASE_L>;
+    };
+
+    lctrl_alt_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_RING ML_MIDDLE>;
+              bindings = <&sk LA(LCTRL)>;
+        layers = <BASE_L>;
+    };
+
+    lctrl_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_PINKY ML_MIDDLE>;
+              bindings = <&sk LC(LGUI)>;
+        layers = <BASE_L>;
+    };
+
+    lalt_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_PINKY ML_RING>;
+              bindings = <&sk LA(LGUI)>;
+        layers = <BASE_L>;
+    };
+
+    lshift_ctrl_alt_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_RING ML_MIDDLE ML_INDEX>;
+              bindings = <&sk LS(LC(LALT))>;
+        layers = <BASE_L>;
+    };
+
+    lshift_ctrl_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_PINKY ML_MIDDLE ML_INDEX>;
+              bindings = <&sk LS(LC(LGUI))>;
+        layers = <BASE_L>;
+    };
+
+    lshift_alt_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <LT2 ML_PINKY ML_RING ML_INDEX>;
+              bindings = <&sk LS(LA(LGUI))>;
+        layers = <BASE_L>;
+    };
+
+    lcrtl_alt_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <37 ML_PINKY ML_RING ML_MIDDLE>;
+              bindings = <&sk LC(LA(LGUI))>;
+        layers = <BASE_L>;
+    };
+
+    // modifier right
+
+    lalt_combo2 {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_RING>;
+              bindings = <&sk LALT>;
+        layers = <BASE_L>;
+    };
+
+    rshft_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_INDEX>;
+              bindings = <&sk RSHFT>;
+        layers = <BASE_L>;
+    };
+
+          rctrl_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_MIDDLE>;
+              bindings = <&sk RCTRL>;
+        layers = <BASE_L>;
+    };
+
+    rgui_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_PINKY>;
+              bindings = <&sk RGUI>;
+        layers = <BASE_L>;
+    };
+
+    rshft_ctrl_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_INDEX MR_MIDDLE>;
+              bindings = <&sk RS(RCTRL)>;
+        layers = <BASE_L>;
+    };
+
+    rshft_alt_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_INDEX MR_RING >;
+              bindings = <&sk RS(LALT)>;
+        layers = <BASE_L>;
+    };
+
+    rshft_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_INDEX MR_PINKY>;
+              bindings = <&sk RS(RGUI)>;
+        layers = <BASE_L>;
+    };
+
+    rctrl_alt_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_MIDDLE MR_RING>;
+              bindings = <&sk RC(LALT)>;
+        layers = <BASE_L>;
+    };
+
+    rctrl_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_MIDDLE MR_PINKY>;
+              bindings = <&sk RC(LGUI)>;
+        layers = <BASE_L>;
+    };
+
+    rgui_alt_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_RING MR_PINKY>;
+              bindings = <&sk LA(RGUI)>;
+        layers = <BASE_L>;
+    };
+
+    rshift_ctrl_alt_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_INDEX MR_MIDDLE MR_RING>;
+              bindings = <&sk RS(RC(LALT))>;
+        layers = <BASE_L>;
+    };
+
+    rshift_ctrl_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_INDEX MR_MIDDLE MR_PINKY>;
+              bindings = <&sk RS(RC(RGUI))>;
+        layers = <BASE_L>;
+    };
+
+    rshift_alt_gui_combo {
+        timeout-ms = <25>;
+              key-positions = <RT2 MR_INDEX MR_RING MR_PINKY>;
+              bindings = <&sk RS(LA(RGUI))>;
+        layers = <BASE_L>;
+    };
+
+    rcrtl_alt_gui_combo {
+        timeout-ms = <40>;
+              key-positions = <RT2 MR_MIDDLE MR_RING MR_PINKY>;
+              bindings = <&sk RC(LA(RGUI))>;
+        layers = <BASE_L>;
+    };
+  /*
+    // vietnamese
+    ngh_combo {
+        timeout-ms = <40>;
+              key-positions = <11 12 13>;
+              bindings = <&ngh_macro>;
+        layers = <VI_L>;
+    };
+
+    ng_combo {
+        timeout-ms = <40>;
+              key-positions = <11 12>;
+              bindings = <&ng_macro>;
+        layers = <VI_L>;
+    };
+
+    gh_combo {
+        timeout-ms = <40>;
+              key-positions = <11 13>;
+              bindings = <&gh_macro>;
+        layers = <VI_L>;
+    };
+
+    nh_combo {
+        timeout-ms = <40>;
+              key-positions = <12 13>;
+              bindings = <&nh_macro>;
+        layers = <VI_L>;
+    };
+
+    th_combo {
+        timeout-ms = <40>;
+              key-positions = <21 13>;
+              bindings = <&th_macro>;
+        layers = <VI_L>;
+    };
+
+    tr_combo {
+        timeout-ms = <40>;
+              key-positions = <21 22>;
+              bindings = <&tr_macro>;
+        layers = <VI_L>;
+    };
+
+    qu_combo {
+        timeout-ms = <40>;
+              key-positions = <22 23>;
+              bindings = <&qu_macro>;
+        layers = <VI_L>;
+    };
+
+    ph_combo {
+        timeout-ms = <40>;
+              key-positions = <1 13>;
+              bindings = <&ph_macro>;
+        layers = <VI_L>;
+    };
+
+    ch_combo {
+        timeout-ms = <40>;
+              key-positions = <22 13>;
+              bindings = <&ch_macro>;
+        layers = <VI_L>;
+    };
+
+    iee_combo {
+        timeout-ms = <40>;
+              key-positions = <6 7>;
+              bindings = <&iee_macro>;
+        layers = <VI_L>;
+    };
+
+    uow_combo {
+        timeout-ms = <30>;
+              key-positions = <16 17>;
+              bindings = <&uow_macro>;
+        layers = <VI_L>;
+    };
+
+    owi_combo {
+        timeout-ms = <30>;
+              key-positions = <17 18>;
+              bindings = <&owi_macro>;
+        layers = <VI_L>;
+    };
+
+    yee_combo {
+        timeout-ms = <40>;
+              key-positions = <7 8>;
+              bindings = <&yee_macro>;
+        layers = <VI_L>;
+    };
+
+    uoo_combo {
+        timeout-ms = <40>;
+              key-positions = <26 27>;
+              bindings = <&uoo_macro>;
+        layers = <VI_L>;
+    };
+
+    ooi_combo {
+        timeout-ms = <40>;
+              key-positions = <27 28>;
+              bindings = <&ooi_macro>;
+        layers = <VI_L>;
+    };
+    */
+  };
+};

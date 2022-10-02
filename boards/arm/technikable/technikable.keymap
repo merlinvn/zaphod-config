@@ -1,0 +1,185 @@
+/*
+ * Copyright (c) 2022 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include "../../../merlinvn/config.dtsi"
+#include "../../../merlinvn/macros.dtsi"
+#include "../../../merlinvn/combos.dtsi"
+#include "../../../merlinvn/behaviors.dtsi"
+
+#define QWERTY_BASE 1
+
+// #define TBLE_ORTHO   true
+// #define TBLE_MIT     true
+#define TBLE_DUAL_2U true
+
+#define BT(n) BT_SEL n
+
+/ {
+    chosen {
+       zmk,matrix_transform =
+#ifdef TBLE_DUAL_2U
+                       &dual_2u_transform;
+#elif defined(TBLE_MIT)
+                       &mit_transform;
+#else
+                       &ortho_transform;
+#endif
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        neo_layer {
+            label = "NeoE";
+            bindings = <
+                TL_MAIN      &none &none       TR_MAIN
+                ML_MAIN      &none &none       MR_MAIN
+                BL_MAIN      &none &none       BR_MAIN
+#ifdef TBLE_DUAL_2U
+        &kp LCTRL  THUMBL_MAIN                                THUMBR_MAIN  &kp RCTRL
+#elif defined(TBLE_MIT)
+       &kp LCTRL   THUMBL_MAIN              &none             THUMBR_MAIN  &kp RCTRL
+#else
+       &kp LCTRL  THUMBL_MAIN     &kp SPACE    &kp SPACE      THUMBR_MAIN  &kp RCTRL
+#endif
+            >;
+        };
+
+        qwerty_layer {
+            label = "QWERTY";
+            bindings = <
+                &kp Q      &kp W     &kp F     &kp P          &kp B    &none    &none         &kp Z    &kp L  &kp U   &kp Y       &kp RET
+                &kp A      &kp R     &kp S     &kp T          &kp G    &none    &none         &kp M    &kp N  &kp H   &kp I       &kp O
+                &kp SQT    &kp X     &kp C     &kp D          &kp V    &none    &none         &kp FSLH &kp J  &kp K   &kp COMMA   &kp DOT
+#ifdef TBLE_DUAL_2U
+                       &kp LCTRL  &kp LALT      &lt NAV_L SPACE                &lt NUM_L SPACE              &kp RALT    &kp RCTRL
+#elif defined(TBLE_MIT)
+                       &kp LCTRL  &sl NUM_L  &lt NAV_L SPACE              &none                &lt FUN_L E  &sl SYM_L  &kp RCTRL
+#else
+                       &kp LCTRL  &kp LALT    &mo NAV_L      &kp SPACE      &kp SPACE        &mo NUM_L      &kp RALT    &kp RCTRL
+#endif
+            >;
+        };
+
+        vie_layer {
+            label = "TELEX";
+            bindings = <
+                &kp Q      &kp W     &kp F     &kp P          &kp B    &none    &none         &kp Z    &kp L  &kp U   &kp Y       &kp RET
+                &kp A      &kp R     &kp S     &kp T          &kp G    &none    &none         &kp M    &kp N  &kp H   &kp I       &kp O
+                &kp SQT    &kp X     &kp C     &kp D          &kp V    &none    &none         &kp FSLH &kp J  &kp K   &kp COMMA   &kp DOT
+#ifdef TBLE_DUAL_2U
+                       &kp LCTRL  &kp LALT      &lt NAV_L SPACE                &lt NUM_L SPACE              &kp RALT    &kp RCTRL
+#elif defined(TBLE_MIT)
+                       &kp LCTRL  &sl NUM_L  &lt NAV_L SPACE              &none                &lt FUN_L E  &sl SYM_L  &kp RCTRL
+#else
+                       &kp LCTRL  &kp LALT    &mo NAV_L      &kp SPACE      &kp SPACE        &mo NUM_L      &kp RALT    &kp RCTRL
+#endif
+            >;
+        };
+
+        nav_layer {
+            label = "Nav";
+            bindings = <
+                TL_NAV     &none  &none      TR_NAV
+                ML_NAV     &none  &none      MR_NAV
+                BL_NAV     &none  &none      BR_NAV
+#ifdef TBLE_DUAL_2U
+                      &trans     THUMBL_NAV                           THUMBR_NAV  &trans
+#elif defined(TBLE_MIT)
+                      &trans     THUMBL_NAV            &trans         THUMBR_NAV   &trans
+#else
+                      &trans     THUMBL_NAV      &trans       &trans  THUMBR_NAV   &trans
+#endif
+            >;
+        };
+
+        other_layer {
+            label = "Other";
+            bindings = <
+&trans     &kp LBKT   &kp N7     &kp N8      &kp N9    &kp RBKT    &kp C_PREV    &trans         &trans       &trans       &trans     &trans
+&trans     &kp SEMI   &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &trans       &trans     &trans
+&trans     &kp GRAVE  &kp N1     &kp N2      &kp N3    &kp BSLH    &trans        &trans         &trans       &trans       &trans     &trans
+#ifdef TBLE_DUAL_2U
+                     &trans     &kp N0      &kp MINUS                            &kp ESC        &kp DEL      &trans
+#elif defined(TBLE_MIT)
+                     &trans     &kp N0      &kp MINUS           &none            &kp ESC        &kp DEL      &trans
+#else
+                     &trans     &kp N0      &kp MINUS    &none         &none     &kp ESC        &kp DEL      &trans
+#endif
+            >;
+        };
+
+        num_layer {
+            label = "Num";
+            bindings = <
+                TL_NUM      &none  &none      TR_NUM
+                ML_NUM      &none  &none      MR_NUM
+                BL_NUM      &none  &none      BR_NUM
+#ifdef TBLE_DUAL_2U
+                     &trans     THUMBL_NUM                            THUMBR_NUM   &trans
+#elif defined(TBLE_MIT)
+                     &trans     THUMBL_NUM           &none            THUMBR_NUM   &trans
+#else
+                     &trans     THUMBL_NUM    &none         &none     THUMBR_NUM   &trans
+#endif
+            >;
+        };
+
+        sym_layer {
+            label = "Sym";
+            bindings = <
+                TL_SYM     &none   &none      TR_SYM
+                ML_SYM     &none   &none      MR_SYM
+                BL_SYM     &none   &none      BR_SYM
+#ifdef TBLE_DUAL_2U
+                      &trans  THUMBL_SYM                            THUMBR_SYM  &trans
+#elif defined(TBLE_MIT)
+                      &trans  THUMBL_SYM           &trans           THUMBR_SYM  &trans
+#else
+                      &trans  THUMBL_SYM     &trans       &trans    THUMBR_SYM  &trans
+#endif
+            >;
+        };
+
+        fun_layer {
+            label = "Fun";
+            bindings = <
+                TL_FUN    &none  &none     TR_FUN
+                ML_FUN    &none  &none     MR_FUN
+                BL_FUN    &none  &none     BR_FUN
+#ifdef TBLE_DUAL_2U
+                      &trans    THUMBL_FUN                               THUMBR_FUN  &trans
+#elif defined(TBLE_MIT)
+                      &trans    THUMBL_FUN              &trans           THUMBR_FUN  &trans
+#else
+                      &trans    THUMBL_FUN        &trans       &trans    THUMBR_FUN  &trans
+#endif
+            >;
+        };
+
+        media_layer {
+            label = "Media";
+            bindings = <
+                TL_MED     &none  &none     TR_MED
+                ML_MED     &none  &none     MR_MED
+                BL_MED     &none  &none     BR_MED
+#ifdef TBLE_DUAL_2U
+             &trans    THUMBL_MED                             THUMBR_MED  &trans
+#elif defined(TBLE_MIT)
+             &trans    THUMBL_MED            &trans           THUMBR_MED  &trans
+#else
+             &trans    THUMBL_MED      &trans       &trans    THUMBR_MED  &trans
+#endif
+            >;
+        };
+
+    };
+};
+

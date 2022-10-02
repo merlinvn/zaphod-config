@@ -8,36 +8,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-
-#define BASE_L 0
-#define QW_L 1
-#define VI_L 2
-#define NAV_L 3
-#define OTH_L 4
-#define NUM_L 5
-#define SYM_L 6
-#define FUN_L 7
-#define MED_L 8
-
-// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-//&lt { quick_tap_ms = <200>; };
-&sl { release-after-ms = <500>; };
-&sk {
-    release-after-ms = <500>;
-    quick-release;
-};
-
-&caps_word {
-  continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
-};
-
-&key_repeat {
-    usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
-};
-
-// &leader {
-//     timeout-ms = <500>;
-// };
+#include "../../../merlinvn/config.dtsi"
+#include "../../../merlinvn/macros.dtsi"
+#include "../../../merlinvn/combos.dtsi"
+#include "../../../merlinvn/behaviors.dtsi"
 
 / {
 //    leader_sequences {
@@ -48,618 +22,11 @@
 //      };
 //    };
 
-    macro {
-      ZMK_MACRO(ng_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp N &kp G>;
-      )
-      ZMK_MACRO(gh_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp G &kp H>;
-      )
-      ZMK_MACRO(nh_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp N &kp H>;
-      )
-      ZMK_MACRO(ngh_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp N &kp G &kp H>;
-      )
-      ZMK_MACRO(th_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp T &kp H>;
-      )
-      ZMK_MACRO(tr_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp T &kp R>;
-      )
-      ZMK_MACRO(ph_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp P &kp H>;
-      )
-      ZMK_MACRO(ch_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp C &kp H>;
-      )
-      ZMK_MACRO(uow_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp U &kp O &kp W>;
-      )
-      ZMK_MACRO(uoo_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp U &kp O &kp O>;
-      )
-      ZMK_MACRO(iee_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp I &kp E &kp E>;
-      )
-      ZMK_MACRO(yee_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp Y &kp E &kp E>;
-      )
-      ZMK_MACRO(owi_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp O &kp W &kp I>;
-      )
-       ZMK_MACRO(ooi_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp O &kp O &kp I>;
-      )
-      ZMK_MACRO(qu_macro,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <&kp Q &kp U>;
-      )
-    };
-    combos {
-        compatible = "zmk,combos";
-  /*
-  med_mo {
-      timeout-ms = <50>;
-            key-positions = <30 33>;
-            bindings = <&sl MED_L>;
-      layers = <BASE_L QW_L VI_L>;
-        };
-  */
-
-  meh_combo {
-      timeout-ms = <40>;
-            key-positions = <30 33>;
-            bindings = <&sk LS(LA(LCTRL))>;
-      layers = <BASE_L>;
-  };
-
-  /*
-  leader_combo {
-      timeout-ms = <40>;
-            key-positions = <31 32>;
-            bindings = <&leader>;
-      layers = <BASE_L>;
-  };
-
-  other_mo {
-      timeout-ms = <50>;
-            key-positions = <31 32>;
-            bindings = <&sl OTH_L>;
-      layers = <0 1 2 3>;
-        };
-        */
-  // top left
-  qu_combo1 {
-      timeout-ms = <40>;
-            key-positions = <1 2>;
-            bindings = <&qu_macro>;
-      layers = <BASE_L>;
-  };
-
-  exl_combo {
-      timeout-ms = <30>;
-            key-positions = <2 3>;
-            bindings = <&kp EXCL>;
-      layers = <BASE_L SYM_L>;
-  };
-
-  del_combo {
-      timeout-ms = <40>;
-            key-positions = <1 2 3>;
-            bindings = <&kp DEL>;
-      layers = <BASE_L>;
-  };
-
-  // top right
-  qmark_combo {
-      timeout-ms = <40>;
-            key-positions = <6 7>;
-            bindings = <&kp QMARK>;
-      layers = <BASE_L SYM_L>;
-  };
-
-  ctrlBs_combo{
-      timeout-ms = <40>;
-            key-positions = <6 7 8>;
-            bindings = <&kp LC(BSPC)>;
-      layers = <BASE_L SYM_L>;
-  };
-
-  // home left
-  tab_combo {
-      timeout-ms = <30>;
-            key-positions = <11 12>;
-            bindings = <&kp TAB>;
-      layers = <BASE_L>;
-  };
-
-  tab_combo2 {
-      timeout-ms = <30>;
-            key-positions = <1 2>;
-            bindings = <&kp TAB>;
-      layers = <VI_L>;
-  };
-
-  esc_combo {
-      timeout-ms = <20>;
-            key-positions = <12 13>;
-            bindings = <&kp ESC>;
-      layers = <BASE_L>;
-  };
-
-  // home right
-
-  colon_combo {
-      timeout-ms = <30>;
-            key-positions = <16 17>;
-            bindings = <&kp COLON>;
-      layers = <BASE_L>;
-  };
-
-  bspc_combo {
-      timeout-ms = <30>;
-            key-positions = <17 18>;
-            bindings = <&kp BSPC>;
-      layers = <BASE_L>;
-  };
-
-  caps_combo {
-      timeout-ms = <50>;
-            key-positions = <16 18>;
-            bindings = <&caps_word>;
-      layers = <BASE_L>;
-  };
-
-  // bottom left
-  hash_combo {
-      timeout-ms = <40>;
-            key-positions = <21 22>;
-            bindings = <&kp HASH>;
-      layers = <BASE_L SYM_L>;
-  };
-
-  minus_combo {
-      timeout-ms = <40>;
-            key-positions = <22 23>;
-            bindings = <&kp MINUS>;
-      layers = <BASE_L SYM_L>;
-  };
-
-  // bottom right
-  under_combo {
-      timeout-ms = <30>;
-            key-positions = <26 27>;
-            bindings = <&kp UNDER>;
-      layers = <BASE_L SYM_L>;
-  };
-
-  star_combo {
-      timeout-ms = <30>;
-            key-positions = <27 28>;
-            bindings = <&kp STAR>;
-      layers = <BASE_L SYM_L>;
-  };
-
-  // modifier left
-  lctrl_combo {
-      timeout-ms = <40>;
-            key-positions = <30 12>;
-            bindings = <&sk LCTRL>;
-            layers = <BASE_L>;
-  };
-
-  lshft_combo {
-      timeout-ms = <25>;
-            key-positions = <30 13>;
-            bindings = <&sk LSHFT>;
-      layers = <BASE_L>;
-  };
-
-  lalt_combo1 {
-      timeout-ms = <25>;
-            key-positions = <30 11>;
-            bindings = <&sk LALT>;
-      layers = <BASE_L>;
-  };
-
-  lgui_combo {
-      timeout-ms = <25>;
-            key-positions = <30 10>;
-            bindings = <&sk LGUI>;
-      layers = <BASE_L>;
-  };
-
-  lshft_ctrl_combo {
-      timeout-ms = <25>;
-            key-positions = <30 12 13>;
-            bindings = <&sk LS(LCTRL)>;
-      layers = <BASE_L>;
-  };
-
-  lshft_alt_combo {
-      timeout-ms = <25>;
-            key-positions = <30 11 13>;
-            bindings = <&sk LS(LALT)>;
-      layers = <BASE_L>;
-  };
-
-  lshft_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <30 10 13>;
-            bindings = <&sk LS(LGUI)>;
-      layers = <BASE_L>;
-  };
-
-  lctrl_alt_combo {
-      timeout-ms = <25>;
-            key-positions = <30 11 12>;
-            bindings = <&sk LA(LCTRL)>;
-      layers = <BASE_L>;
-  };
-
-  lctrl_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <30 10 12>;
-            bindings = <&sk LC(LGUI)>;
-      layers = <BASE_L>;
-  };
-
-  lalt_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <30 10 11>;
-            bindings = <&sk LA(LGUI)>;
-      layers = <BASE_L>;
-  };
-
-  lshift_ctrl_alt_combo {
-      timeout-ms = <25>;
-            key-positions = <30 11 12 13>;
-            bindings = <&sk LS(LC(LALT))>;
-      layers = <BASE_L>;
-  };
-
-  lshift_ctrl_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <30 10 12 13>;
-            bindings = <&sk LS(LC(LGUI))>;
-      layers = <BASE_L>;
-  };
-
-  lshift_alt_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <30 10 11 13>;
-            bindings = <&sk LS(LA(LGUI))>;
-      layers = <BASE_L>;
-  };
-
-  lcrtl_alt_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <30 10 11 12>;
-            bindings = <&sk LC(LA(LGUI))>;
-      layers = <BASE_L>;
-  };
-
-  // modifier right
-
-  lalt_combo2 {
-      timeout-ms = <25>;
-            key-positions = <33 18>;
-            bindings = <&sk LALT>;
-      layers = <BASE_L>;
-  };
-
-  rshft_combo {
-      timeout-ms = <25>;
-            key-positions = <33 16>;
-            bindings = <&sk RSHFT>;
-      layers = <BASE_L>;
-  };
-
-        rctrl_combo {
-      timeout-ms = <25>;
-            key-positions = <33 17>;
-            bindings = <&sk RCTRL>;
-      layers = <BASE_L>;
-  };
-
-  rgui_combo {
-      timeout-ms = <25>;
-            key-positions = <33 19>;
-            bindings = <&sk RGUI>;
-      layers = <BASE_L>;
-  };
-
-  rshft_ctrl_combo {
-      timeout-ms = <25>;
-            key-positions = <33 16 17>;
-            bindings = <&sk RS(RCTRL)>;
-      layers = <BASE_L>;
-  };
-
-  rshft_alt_combo {
-      timeout-ms = <25>;
-            key-positions = <33 16 18>;
-            bindings = <&sk RS(LALT)>;
-      layers = <BASE_L>;
-  };
-
-  rshft_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <33 16 19>;
-            bindings = <&sk RS(RGUI)>;
-      layers = <BASE_L>;
-  };
-
-  rctrl_alt_combo {
-      timeout-ms = <25>;
-            key-positions = <33 17 18>;
-            bindings = <&sk RC(LALT)>;
-      layers = <BASE_L>;
-  };
-
-  rctrl_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <33 17 19>;
-            bindings = <&sk RC(LGUI)>;
-      layers = <BASE_L>;
-  };
-
-  rgui_alt_combo {
-      timeout-ms = <25>;
-            key-positions = <33 18 19>;
-            bindings = <&sk LA(RGUI)>;
-      layers = <BASE_L>;
-  };
-
-  rshift_ctrl_alt_combo {
-      timeout-ms = <25>;
-            key-positions = <33 16 17 18>;
-            bindings = <&sk RS(RC(LALT))>;
-      layers = <BASE_L>;
-  };
-
-  rshift_ctrl_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <33 16 17 19>;
-            bindings = <&sk RS(RC(RGUI))>;
-      layers = <BASE_L>;
-  };
-
-  rshift_alt_gui_combo {
-      timeout-ms = <25>;
-            key-positions = <33 16 18 19>;
-            bindings = <&sk RS(LA(RGUI))>;
-      layers = <BASE_L>;
-  };
-
-  rcrtl_alt_gui_combo {
-      timeout-ms = <40>;
-            key-positions = <33 17 18 19>;
-            bindings = <&sk RC(LA(RGUI))>;
-      layers = <BASE_L>;
-  };
-/*
-  // vietnamese
-  ngh_combo {
-      timeout-ms = <40>;
-            key-positions = <11 12 13>;
-            bindings = <&ngh_macro>;
-      layers = <VI_L>;
-  };
-
-  ng_combo {
-      timeout-ms = <40>;
-            key-positions = <11 12>;
-            bindings = <&ng_macro>;
-      layers = <VI_L>;
-  };
-
-  gh_combo {
-      timeout-ms = <40>;
-            key-positions = <11 13>;
-            bindings = <&gh_macro>;
-      layers = <VI_L>;
-  };
-
-  nh_combo {
-      timeout-ms = <40>;
-            key-positions = <12 13>;
-            bindings = <&nh_macro>;
-      layers = <VI_L>;
-  };
-
-  th_combo {
-      timeout-ms = <40>;
-            key-positions = <21 13>;
-            bindings = <&th_macro>;
-      layers = <VI_L>;
-  };
-
-  tr_combo {
-      timeout-ms = <40>;
-            key-positions = <21 22>;
-            bindings = <&tr_macro>;
-      layers = <VI_L>;
-  };
-
-  qu_combo {
-      timeout-ms = <40>;
-            key-positions = <22 23>;
-            bindings = <&qu_macro>;
-      layers = <VI_L>;
-  };
-
-  ph_combo {
-      timeout-ms = <40>;
-            key-positions = <1 13>;
-            bindings = <&ph_macro>;
-      layers = <VI_L>;
-  };
-
-  ch_combo {
-      timeout-ms = <40>;
-            key-positions = <22 13>;
-            bindings = <&ch_macro>;
-      layers = <VI_L>;
-  };
-
-  iee_combo {
-      timeout-ms = <40>;
-            key-positions = <6 7>;
-            bindings = <&iee_macro>;
-      layers = <VI_L>;
-  };
-
-  uow_combo {
-      timeout-ms = <30>;
-            key-positions = <16 17>;
-            bindings = <&uow_macro>;
-      layers = <VI_L>;
-  };
-
-  owi_combo {
-      timeout-ms = <30>;
-            key-positions = <17 18>;
-            bindings = <&owi_macro>;
-      layers = <VI_L>;
-  };
-
-  yee_combo {
-      timeout-ms = <40>;
-            key-positions = <7 8>;
-            bindings = <&yee_macro>;
-      layers = <VI_L>;
-  };
-
-  uoo_combo {
-      timeout-ms = <40>;
-            key-positions = <26 27>;
-            bindings = <&uoo_macro>;
-      layers = <VI_L>;
-  };
-
-  ooi_combo {
-      timeout-ms = <40>;
-            key-positions = <27 28>;
-            bindings = <&ooi_macro>;
-      layers = <VI_L>;
-  };
-  */
-    };
-
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods";
-            #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        bhm: balanced_homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
-
-        lhm: left_hand_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_POSITIONAL_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>;    // <---[[right-hand keys]]
-        };
-
-        rhm: right_hand_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_POSITIONAL_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;    // <---[[left-hand keys]]
-        };
-
-        comexc: comma_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_EXCLAMATION";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dotque: dot_question {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOT_QUEST";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp QMARK>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        alt_swap: swapper_0 {
-            compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
-            #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            ignored-key-positions = <26 27 28 17>;
-            ignored-layers = <NAV_L>;
-        };
-
-        gui_swap: swapper_1 {
-            compatible = "zmk,behavior-tri-state";
-            label = "GUISWAPPER";
-            #binding-cells = <0>;
-            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-            ignored-key-positions = <>;
-            ignored-layers = <NAV_L>;
-        };
-
-        grave_swap: swapper_2 {
-            compatible = "zmk,behavior-tri-state";
-            label = "GRAVESWAPPER";
-            #binding-cells = <0>;
-            bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
-            ignored-key-positions = <>;
-            ignored-layers = <NAV_L>;
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <NUM_L SYM_L>;
+            then-layer = <MED_L>;
         };
     };
 
@@ -669,10 +36,10 @@
         neo_layer {
             label = "NeoE";
             bindings = <
-                &kp Q      &kp W     &kp F     &kp P          &kp B                &kp Z    &kp L  &kp U   &kp Y       &kp RET
-                &kp A      &kp R     &kp S     &kp T          &kp G                &kp M    &kp N  &kp H   &kp I       &kp O
-                &kp SQT    &kp X     &kp C     &kp D          &kp V                &kp FSLH &kp J  &kp K   &kp COMMA   &kp DOT
-                                                  &sl NUM_L  &lt NAV_L SPACE     &lt FUN_L E  &sl SYM_L
+                TL_MAIN         TR_MAIN
+                ML_MAIN         MR_MAIN
+                BL_MAIN         BR_MAIN
+                THUMBL_MAIN     THUMBR_MAIN
             >;
         };
 
@@ -699,10 +66,10 @@
        nav_layer {
             label = "Nav";
             bindings = <
-                &gui_swap        &alt_swap        &kp LC(LS(TAB))  &kp LC(TAB)      &grave_swap          &kp K_APP      &kp HOME     &kp UARW     &kp END     &kp RET
-                &sk LGUI         &sk LALT         &sk LCTRL        &sk LSHFT        &kp LG(LC(LA(DARW))) &kp CAPS       &kp LARW     &kp DARW     &kp RARW    &kp BSPC
-                &kp LG(LC(LARW)) &kp LG(LC(RARW)) &kp LG(LA(LARW)) &kp LG(LA(RARW)) &kp LC(LA(DARW))     &kp INS        &kp PG_DN    &kp PG_UP    &none       &kp RC(BSLH)
-                                                      &trans          &trans       &kp LG(SPACE)       &kp RET
+                TL_NAV         TR_NAV
+                ML_NAV         MR_NAV
+                BL_NAV         BR_NAV
+                THUMBL_NAV     THUMBR_NAV
             >;
         };
 
@@ -719,40 +86,40 @@
         num_layer {
             label = "Num";
             bindings = <
-                &none          &none        &none      &none       &none              &kp KP_MULTIPLY   &kp N7     &kp N8      &kp N9          &kp RET
-                &sk LGUI       &sk LALT     &sk LCTRL  &sk LSHFT   &none              &kp KP_PLUS       &kp N4     &kp N5      &kp N6          &kp EQUAL
-                &none          &none        &none      &none       &none              &kp KP_MINUS      &kp N1     &kp N2      &kp N3          &kp DOT
-                                                       &trans      &kp SPACE          &kp N0         &mo MED_L
+                TL_NUM         TR_NUM
+                ML_NUM         MR_NUM
+                BL_NUM         BR_NUM
+                THUMBL_NUM     THUMBR_NUM
             >;
         };
 
         sym_layer {
             label = "Sym";
             bindings = <
-                &kp TILDE     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT        &kp STAR   &kp CARET       &kp AMPS     &kp DLLR     &kp RET
-                &kp SEMI      &kp EQUAL    &kp LPAR       &kp RPAR      &kp PLUS         &kp COLON  &sk RSHFT       &sk RCTRL    &sk LALT     &sk RGUI
-                &kp DQT       &kp BSLH     &kp LBKT       &kp RBKT      &kp PIPE         &kp QMARK  &kp LT          &kp GT       &kp UNDER    &kp GRAVE
-                                                          &mo MED_L    &kp SPACE       &trans    &trans
+                TL_SYM         TR_SYM
+                ML_SYM         MR_SYM
+                BL_SYM         BR_SYM
+                THUMBL_SYM     THUMBR_SYM
             >;
         };
 
         fun_layer {
             label = "Fun";
             bindings = <
-                &kp F10     &kp F7    &kp F8     &kp F9     &kp PSCRN            &none    &none       &none       &none       &none
-                &kp F11     &kp F4    &kp F5     &kp F6     &kp SLCK             &none    &sk RSHFT   &sk RCTRL   &sk LALT    &sk RGUI
-                &kp F12     &kp F1    &kp F2     &kp F3     &kp PAUSE_BREAK      &none    &none       &none       &none       &none
-                                                            &trans  &trans      &trans  &mo MED_L
+                TL_FUN         TR_FUN
+                ML_FUN         MR_FUN
+                BL_FUN         BR_FUN
+                THUMBL_SYM     THUMBR_SYM
             >;
         };
 
         media_layer {
             label = "Media";
             bindings = <
-                &to 0        &to 1         &to 2         &to 3      &none                  &none       &trans       &trans             &trans       &trans
-                &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &none       &kp C_PREV   &kp C_VOL_DN       &kp C_VOL_UP &kp C_NEXT
-                &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none      &bt BT_CLR             &none       &kp C_STOP   &kp C_PLAY_PAUSE   &trans       &trans
-                                                          &trans     &trans          &trans      &trans
+                TL_MED         TR_MED
+                ML_MED         MR_MED
+                BL_MED         BR_MED
+                THUMBL_MED     THUMBR_MED
             >;
         };
 
