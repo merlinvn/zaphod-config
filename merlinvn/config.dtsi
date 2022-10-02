@@ -57,17 +57,17 @@
 #define TL_NAV &gui_swap        &alt_swap        &kp LC(LS(TAB))  &kp LC(TAB)      &grave_swap
 #define ML_NAV &sk LGUI         &sk LALT         &sk LCTRL        &sk LSHFT        &kp LG(LC(LA(DARW)))
 #define BL_NAV &kp LG(LC(LARW)) &kp LG(LC(RARW)) &kp LG(LA(LARW)) &kp LG(LA(RARW)) &kp LC(LA(DARW))
-#define TR_NAV &kp K_APP  &kp HOME  &kp UARW  &kp END  &kp RET
-#define MR_NAV &kp CAPS  &kp LARW  &kp DARW  &kp RARW  &kp BSPC
-#define BR_NAV &kp INS  &kp PG_DN  &kp PG_UP  &none  &kp RC(BSLH)
+#define TR_NAV &kp K_APP  &kp HOME   &kp UARW   &kp END       &kp RET
+#define MR_NAV &kp CAPS   &kp LARW   &kp DARW   &kp RARW      &kp BSPC
+#define BR_NAV &kp INS    &kp PG_DN  &kp PG_UP  &kp RC(BSLH)  &kp DEL
 
 #define THUMBL_NAV &trans          &trans
 #define THUMBR_NAV &kp LG(SPACE)   &kp RET
 
 
-#define TL_NUM &none     &none     &none      &none      &none
+#define TL_NUM &none     &none     &kp LG(LA(H))      &kp LG(LA(L))      &none
 #define ML_NUM &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &none
-#define BL_NUM &none     &none     &none      &none      &none
+#define BL_NUM &kp LG(LA(S))     &kp LG(LA(G))     &kp LG(LA(C))      &kp LG(LA(X))      &none
 #define TR_NUM &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp RET
 #define MR_NUM &kp KP_PLUS      &kp N4  &kp N5  &kp N6  &kp EQUAL
 #define BR_NUM &kp KP_MINUS     &kp N1  &kp N2  &kp N3  &kp DOT
@@ -92,7 +92,7 @@
 #define BL_FUN &kp F12     &kp F1    &kp F2     &kp F3     &kp PAUSE_BREAK
 #define TR_FUN &none    &none       &none       &none       &none
 #define MR_FUN &none    &sk RSHFT   &sk RCTRL   &sk LALT    &sk RGUI
-#define BR_FUN &none    &none       &none       &none       &kp RC(BSLH)
+#define BR_FUN &none    &none       &none       &none       &none
 
 #define THUMBL_FUN &trans      &trans
 #define THUMBR_FUN &kp K_APP   &trans
