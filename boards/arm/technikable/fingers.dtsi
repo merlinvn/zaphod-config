@@ -1,0 +1,46 @@
+#ifdef TBLE_DUAL_2U
+#define LT2 37
+#define LT1 38
+#define RT1 39
+#define RT2 40
+#elif defined(TBLE_MIT)
+#define LT2 37
+#define LT1 38
+#define RT1 40
+#define RT2 41
+#else
+#define LT2 37
+#define LT1 38
+#define RT1 41
+#define RT2 42
+#endif
+
+#define TL_PINKY 0
+#define TL_RING 1
+#define TL_MIDDLE 2
+#define TL_INDEX 3
+
+#define TR_INDEX 8
+#define TR_MIDDLE 9
+#define TR_RING 10
+#define TR_PINKY 11
+
+#define ML_PINKY 12
+#define ML_RING 13
+#define ML_MIDDLE 14
+#define ML_INDEX 15
+
+#define MR_INDEX 20
+#define MR_MIDDLE 21
+#define MR_RING 22
+#define MR_PINKY 23
+
+#define BL_PINKY 24
+#define BL_RING 25
+#define BL_MIDDLE 26
+#define BL_INDEX 27
+
+#define BR_INDEX 32
+#define BR_MIDDLE 33
+#define BR_RING 34
+#define BR_PINKY 35

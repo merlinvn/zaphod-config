@@ -1,0 +1,34 @@
+#define LT2 30
+#define LT1 31
+#define RT1 32
+#define RT2 33
+
+#define TL_PINKY 0
+#define TL_RING 1
+#define TL_MIDDLE 2
+#define TL_INDEX 3
+
+#define TR_INDEX 6
+#define TR_MIDDLE 7
+#define TR_RING 8
+#define TR_PINKY 9
+
+#define ML_PINKY 10
+#define ML_RING 11
+#define ML_MIDDLE 12
+#define ML_INDEX 13
+
+#define MR_INDEX 16
+#define MR_MIDDLE 17
+#define MR_RING 18
+#define MR_PINKY 19
+
+#define BL_PINKY 20
+#define BL_RING 21
+#define BL_MIDDLE 22
+#define BL_INDEX 23
+
+#define BR_INDEX 26
+#define BR_MIDDLE 27
+#define BR_RING 28
+#define BR_PINKY 29

@@ -8,41 +8,6 @@
 #define FUN_L 7
 #define MED_L 8
 
-#define LT2 30
-#define LT1 31
-#define RT1 32
-#define RT2 33
-
-#define TL_PINKY 0
-#define TL_RING 1
-#define TL_MIDDLE 2
-#define TL_INDEX 3
-
-#define TR_INDEX 6
-#define TR_MIDDLE 7
-#define TR_RING 8
-#define TR_PINKY 9
-
-#define ML_PINKY 10
-#define ML_RING 11
-#define ML_MIDDLE 12
-#define ML_INDEX 13
-
-#define MR_INDEX 16
-#define MR_MIDDLE 17
-#define MR_RING 18
-#define MR_PINKY 19
-
-#define BL_PINKY 20
-#define BL_RING 21
-#define BL_MIDDLE 22
-#define BL_INDEX 23
-
-#define BR_INDEX 26
-#define BR_MIDDLE 27
-#define BR_RING 28
-#define BR_PINKY 29
-
 #define TL_MAIN &kp Q    &kp W  &kp F  &kp P      &kp B
 #define ML_MAIN &kp A    &kp R  &kp S  &kp T      &kp G
 #define BL_MAIN &kp SQT  &kp X  &kp C  &kp D      &kp V
@@ -73,7 +38,7 @@
 #define BR_NUM &kp KP_MINUS     &kp N1  &kp N2  &kp N3  &kp DOT
 
 #define THUMBL_NUM &trans      &kp SPACE
-#define THUMBR_NUM &kp N0         &mo MED_L
+#define THUMBR_NUM &kp N0      &mo MED_L
 
 
 #define TL_SYM &kp GRAVE     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT
@@ -83,7 +48,7 @@
 #define MR_SYM &kp COLON  &sk RSHFT       &sk RCTRL    &sk LALT     &sk RGUI
 #define BR_SYM &kp QMARK  &kp LT          &kp GT       &kp UNDER    &kp TILDE
 
-#define THUMBL_SYM &mo MED_L    &kp SPACE
+#define THUMBL_SYM &mo MED_L  &kp SPACE
 #define THUMBR_SYM &trans    &trans
 
 
