@@ -1,0 +1,66 @@
+#define TL_MAIN &kp Q    &kp W  &kp F  &kp P      &kp B
+#define ML_MAIN &hm LGUI A    &hm LALT R  &hm LCTRL S  &hm LSHFT T      &kp G
+//#define ML_MAIN &kp A    &kp R  &kp S  &kp T      &kp G
+#define BL_MAIN &kp SQT  &kp X  &kp C  &kp D      &kp V
+#define TR_MAIN &kp Z    &kp L  &kp U  &kp Y      &kp RET
+//#define MR_MAIN &kp M    &kp N  &kp H  &kp I      &kp O
+#define MR_MAIN &kp M    &hm RSHFT N  &hm RCTRL H  &hm LALT I      &hm RGUI O
+#define BR_MAIN &kp FSLH &kp J  &kp K  &kp COMMA  &kp DOT
+
+#define THUMBL_MAIN &sl NUM_L  &lt NAV_L SPACE
+#define THUMBR_MAIN &lt FUN_L E  &sl SYM_L
+
+
+#define TL_NAV &gui_swap        &alt_swap        &kp LC(LS(TAB))  &kp LC(TAB)      &grave_swap
+#define ML_NAV &sk LGUI         &sk LALT         &sk LCTRL        &sk LSHFT        &kp LG(LC(LA(DARW)))
+#define BL_NAV &kp LG(LC(LARW)) &kp LG(LC(RARW)) &kp LG(LA(LARW)) &kp LG(LA(RARW)) &kp LC(LA(DARW))
+#define TR_NAV &kp K_APP  &kp HOME   &kp UARW   &kp END       &kp RET
+#define MR_NAV &kp CAPS   &kp LARW   &kp DARW   &kp RARW      &kp BSPC
+#define BR_NAV &kp INS    &kp PG_DN  &kp PG_UP  &caps_word &kp RC(BSLH)
+
+#define THUMBL_NAV &trans          &trans
+#define THUMBR_NAV &kp LG(SPACE)   &trans
+
+
+#define TL_NUM &none            &none             &kp LG(LA(H))      &kp LG(LA(LS(X)))  &none
+#define ML_NUM &sk LGUI         &sk LALT          &sk LCTRL          &sk LSHFT          &none
+#define BL_NUM &kp LG(LA(S))    &kp LG(LA(G))     &kp LG(LA(C))      &kp LG(LA(X))      &none
+#define TR_NUM &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp RET
+#define MR_NUM &kp KP_PLUS      &kp N4  &kp N5  &kp N6  &kp EQUAL
+#define BR_NUM &kp KP_MINUS     &kp N1  &kp N2  &kp N3  &kp DOT
+
+#define THUMBL_NUM &trans      &kp SPACE
+#define THUMBR_NUM &kp N0      &mo MED_L
+
+
+#define TL_SYM &kp GRAVE     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT
+#define ML_SYM &kp SEMI      &kp EQUAL    &kp LPAR       &kp RPAR      &kp PLUS
+#define BL_SYM &kp DQT       &kp BSLH     &kp LBKT       &kp RBKT      &kp PIPE
+#define TR_SYM &kp STAR   &kp CARET       &kp AMPS     &kp DLLR     &kp RET
+#define MR_SYM &kp COLON  &sk RSHFT       &sk RCTRL    &sk LALT     &sk RGUI
+#define BR_SYM &kp QMARK  &kp LT          &kp GT       &kp UNDER    &kp TILDE
+
+#define THUMBL_SYM &mo MED_L  &kp SPACE
+#define THUMBR_SYM &trans    &trans
+
+
+#define TL_FUN &kp F10     &kp F7    &kp F8     &kp F9     &kp PSCRN
+#define ML_FUN &kp F11     &kp F4    &kp F5     &kp F6     &kp SLCK
+#define BL_FUN &kp F12     &kp F1    &kp F2     &kp F3     &kp PAUSE_BREAK
+#define TR_FUN &none    &none       &none       &none       &none
+#define MR_FUN &none    &sk RSHFT   &sk RCTRL   &sk LALT    &sk RGUI
+#define BR_FUN &none    &none       &none       &none       &none
+
+#define THUMBL_FUN &trans      &trans
+#define THUMBR_FUN &kp K_APP   &trans
+
+
+#define TL_MED &to 0         &to 1          &to 2         &to 3        &none
+#define ML_MED &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4
+#define BL_MED &out OUT_TOG  &out OUT_BLE   &out OUT_USB  &none        &bt BT_CLR
+#define TR_MED &none     &none        &none              &none         &none
+#define MR_MED &none     &kp C_MUTE   &kp C_VOL_DN       &kp C_VOL_UP  &none
+#define BR_MED &none     &kp C_STOP   &kp C_PLAY_PAUSE   &kp C_PREV    &kp C_NEXT
+
+#define THUMBL_MED &trans      &trans
+#define THUMBR_MED &trans      &trans

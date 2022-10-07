@@ -13,11 +13,12 @@
 #define TBLE_MIT     true
 //#define TBLE_DUAL_2U true
 
-#include "./fingers.dtsi"
 #include "../../../merlinvn/config.dtsi"
-#include "../../../merlinvn/macros.dtsi"
-#include "../../../merlinvn/combos.dtsi"
 #include "../../../merlinvn/behaviors.dtsi"
+#include "../../../merlinvn/keymap.dtsi"
+#include "../../../merlinvn/macros.dtsi"
+#include "./fingers.dtsi"
+#include "../../../merlinvn/combos.dtsi"
 
 #define BT(n) BT_SEL n
 

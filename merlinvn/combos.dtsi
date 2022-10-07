@@ -1,3 +1,6 @@
+/* #define THUMB_COMBO false */
+/* #define VIE_COMBO false */
+
 / {
   combos {
     compatible = "zmk,combos";
@@ -71,7 +74,7 @@
     tab_combo {
         timeout-ms = <30>;
               key-positions = <ML_RING ML_MIDDLE>;
-              bindings = <&kp TAB>;
+              bindings = <&hm LA(LCTRL) TAB>;
         layers = <BASE_L>;
     };
 
@@ -85,7 +88,7 @@
     esc_combo {
         timeout-ms = <20>;
               key-positions = <ML_MIDDLE ML_INDEX>;
-              bindings = <&kp ESC>;
+              bindings = <&hm LS(LCTRL) ESC>;
         layers = <BASE_L>;
     };
 
@@ -94,21 +97,14 @@
     colon_combo {
         timeout-ms = <30>;
               key-positions = <MR_INDEX MR_MIDDLE>;
-              bindings = <&kp COLON>;
+              bindings = <&hm RS(RCTRL) COLON>;
         layers = <BASE_L>;
     };
 
     bspc_combo {
         timeout-ms = <30>;
               key-positions = <MR_MIDDLE MR_RING>;
-              bindings = <&kp BSPC>;
-        layers = <BASE_L>;
-    };
-
-    caps_combo {
-        timeout-ms = <50>;
-              key-positions = <MR_INDEX MR_RING>;
-              bindings = <&caps_word>;
+              bindings = <&hm RA(RCTRL) BSPC>;
         layers = <BASE_L>;
     };
 
@@ -142,6 +138,7 @@
         layers = <BASE_L SYM_L>;
     };
 
+#ifdef THUMB_COMBO
     // modifier left  thumb start at 36
     lctrl_combo {
         timeout-ms = <40>;
@@ -340,7 +337,8 @@
               bindings = <&sk RC(LA(RGUI))>;
         layers = <BASE_L>;
     };
-  /*
+#endif
+#ifdef VIE_COMBO
     // vietnamese
     ngh_combo {
         timeout-ms = <40>;
@@ -446,6 +444,6 @@
               bindings = <&ooi_macro>;
         layers = <VI_L>;
     };
-    */
+#endif
   };
 };
