@@ -1,10 +1,12 @@
 #define TL_MAIN &kp Q    &kp W  &kp F  &kp P      &kp B
 #define ML_MAIN &hm LGUI A    &hm LALT R  &hm LCTRL S  &hm LSHFT T      &kp G
+//#define ML_MAIN &hm LGUI A    &hm LALT R  &hm LCTRL S  &hm LSHFT T      &kp G
 //#define ML_MAIN &kp A    &kp R  &kp S  &kp T      &kp G
 #define BL_MAIN &kp SQT  &kp X  &kp C  &kp D      &kp V
 #define TR_MAIN &kp Z    &kp L  &kp U  &kp Y      &kp RET
 //#define MR_MAIN &kp M    &kp N  &kp H  &kp I      &kp O
-#define MR_MAIN &kp M    &hm RSHFT N  &hm RCTRL H  &hm LALT I      &hm RGUI O
+//#define MR_MAIN &kp M    &hm RSHFT N  &hm RCTRL H  &hm LALT I      &hm RGUI O
+#define MR_MAIN &kp M    &hm RSHFT N  &hm RCTRL H  &hm LALT I      &hmo RGUI O
 #define BR_MAIN &kp FSLH &kp J  &kp K  &kp COMMA  &kp DOT
 
 #define THUMBL_MAIN &sl NUM_L  &lt NAV_L SPACE
