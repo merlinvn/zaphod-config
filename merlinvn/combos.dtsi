@@ -48,13 +48,6 @@
         layers = <BASE_L SYM_L>;
     };
 
-    del_combo {
-        timeout-ms = <40>;
-              key-positions = <TL_RING TL_MIDDLE TL_INDEX>;
-              bindings = <&kp DEL>;
-        layers = <BASE_L>;
-    };
-
     // top right
     qmark_combo {
         timeout-ms = <40>;
@@ -68,6 +61,13 @@
               key-positions = <TR_INDEX TR_MIDDLE TR_RING>;
               bindings = <&kp LC(BSPC)>;
         layers = <BASE_L SYM_L>;
+    };
+    
+    del_combo {
+        timeout-ms = <40>;
+              key-positions = <TR_MIDDLE TR_RING>;
+              bindings = <&kp DEL>;
+        layers = <BASE_L>;
     };
 
     // home left start at 12
