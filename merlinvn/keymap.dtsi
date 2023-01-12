@@ -13,20 +13,20 @@
 #define THUMBR_MAIN &lt FUN_L E  &sl SYM_L
 
 
-#define TL_NAV &gui_swap        &alt_swap        &kp LC(LS(TAB))  &kp LC(TAB)      &grave_swap
-#define ML_NAV &sk LGUI         &sk LALT         &sk LCTRL        &sk LSHFT        &kp LG(LC(LA(DARW)))
-#define BL_NAV &kp LG(LC(LARW)) &kp LG(LC(RARW)) &kp LG(LA(LARW)) &kp LG(LA(RARW)) &kp LC(LA(DARW))
+#define TL_NAV &gui_swap        &alt_swap        &kp LC(LS(TAB))  &kp LC(TAB)      &kp CAPS
+#define ML_NAV &hm LGUI LC(A)   &hm LALT LC(R)   &hm LCTRL LC(S)  &hm LSHFT LC(T)  &kp LC(G)
+#define BL_NAV &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(D)        &kp LC(V)
 #define TR_NAV &kp K_APP  &kp HOME   &kp UARW   &kp END       &kp RET
-#define MR_NAV &kp CAPS   &kp LARW   &kp DARW   &kp RARW      &kp BSPC
-#define BR_NAV &kp INS    &kp PG_DN  &kp PG_UP  &caps_word &kp RC(BSLH)
+#define MR_NAV &kp DEL   &kp LARW   &kp DARW    &kp RARW      &kp BSPC
+#define BR_NAV &kp INS    &kp PG_DN  &kp PG_UP  &none         &caps_word
 
 #define THUMBL_NAV &trans          &trans
 #define THUMBR_NAV &kp LG(SPACE)   &trans
 
 
-#define TL_NUM &none            &none             &kp LG(LA(H))      &kp LG(LA(LS(X)))  &none
-#define ML_NUM &sk LGUI         &sk LALT          &sk LCTRL          &sk LSHFT          &none
-#define BL_NUM &kp LG(LA(S))    &kp LG(LA(G))     &kp LG(LA(C))      &kp LG(LA(X))      &none
+#define TL_NUM &none            &none             &none              &none            &none
+#define ML_NUM &sk LGUI         &sk LALT          &sk LCTRL          &sk LSHFT        &none
+#define BL_NUM &kp LG(LA(S))    &kp LG(LA(X))     &kp LG(LA(C))      &kp LG(LA(D))    &none
 #define TR_NUM &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp RET
 #define MR_NUM &kp KP_PLUS      &kp N4  &kp N5  &kp N6  &kp EQUAL
 #define BR_NUM &kp KP_MINUS     &kp N1  &kp N2  &kp N3  &kp DOT
