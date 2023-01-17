@@ -49,7 +49,7 @@
 #define TL_FUN &kp F10     &kp F7    &kp F8     &kp F9     &kp PSCRN
 #define ML_FUN &kp F11     &kp F4    &kp F5     &kp F6     &kp SLCK
 #define BL_FUN &kp F12     &kp F1    &kp F2     &kp F3     &kp PAUSE_BREAK
-#define TR_FUN &kp RC(Z)     &kp RC(L)           &kp RC(Y)          &kp RC(U)         &kp RC(RET)    
+#define TR_FUN &kp RC(Z)     &kp RC(L)           &kp RC(U)          &kp RC(Y)         &kp RC(RET)    
 #define MR_FUN &kp RC(M)     &hm RSHFT RC(N)     &hm RCTRL RC(H)    &hm LALT LC(I)    &hm RGUI RC(O)
 #define BR_FUN &kp RC(FSLH)  &kp RC(J)           &kp RC(K)          &kp RC(COMMA)     &kp RC(DOT)    
 
