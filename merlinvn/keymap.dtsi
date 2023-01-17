@@ -13,7 +13,7 @@
 #define THUMBR_MAIN &lt FUN_L E  &sl SYM_L
 
 
-#define TL_NAV &kp LC(Q)        &LC(W)           &kp LC(F)        &kp LC(P)        &kp LC(B)
+#define TL_NAV &kp LC(Q)        &kp LC(W)        &kp LC(F)        &kp LC(P)        &kp LC(B)
 #define ML_NAV &hm LGUI LC(A)   &hm LALT LC(R)   &hm LCTRL LC(S)  &hm LSHFT LC(T)  &kp LC(G)
 #define BL_NAV &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(D)        &kp LC(V)
 #define TR_NAV &kp CAPS    &kp HOME   &kp UARW    &kp END       &kp DEL
@@ -49,9 +49,9 @@
 #define TL_FUN &kp F10     &kp F7    &kp F8     &kp F9     &kp PSCRN
 #define ML_FUN &kp F11     &kp F4    &kp F5     &kp F6     &kp SLCK
 #define BL_FUN &kp F12     &kp F1    &kp F2     &kp F3     &kp PAUSE_BREAK
-#define TR_FUN &kp LC(Z)     &kp LC(L)            &kp LC(Y)           &kp LC(U)          &LC(RET)    
-#define MR_FUN &kp LC(M)     &hm RSHFT &LC(N)     &hm RCTRL &LC(H)    &hm LALT &LC(I)    &hm RGUI &LC(O)
-#define BR_FUN &kp LC(FSLH)  &kp LC(J)            &kp LC(K)           &kp LC(COMMA)      &kp LC(DOT)    
+#define TR_FUN &kp LC(Z)     &kp LC(L)           &kp LC(Y)          &kp LC(U)         &kp LC(RET)    
+#define MR_FUN &kp LC(M)     &hm RSHFT LC(N)     &hm RCTRL LC(H)    &hm LALT LC(I)    &hm RGUI LC(O)
+#define BR_FUN &kp LC(FSLH)  &kp LC(J)           &kp LC(K)          &kp LC(COMMA)     &kp LC(DOT)    
 
 #define THUMBL_FUN &kp K_APP   &trans
 #define THUMBR_FUN &trans   &trans
