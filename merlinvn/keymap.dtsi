@@ -26,7 +26,7 @@
 
 #define TL_NUM &none            &none             &none              &none            &none
 #define ML_NUM &sk LGUI         &sk LALT          &sk LCTRL          &sk LSHFT        &none
-#define BL_NUM &kp LG(LA(S))    &kp LG(LA(X))     &kp LG(LA(C))      &kp LG(LA(D))    &none
+#define BL_NUM &none            &none             &none              &none            &none
 #define TR_NUM &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp RET
 #define MR_NUM &kp KP_PLUS      &kp N4  &kp N5  &kp N6  &kp EQUAL
 #define BR_NUM &kp KP_MINUS     &kp N1  &kp N2  &kp N3  &kp DOT
@@ -49,9 +49,9 @@
 #define TL_FUN &kp F10     &kp F7    &kp F8     &kp F9     &kp PSCRN
 #define ML_FUN &kp F11     &kp F4    &kp F5     &kp F6     &kp SLCK
 #define BL_FUN &kp F12     &kp F1    &kp F2     &kp F3     &kp PAUSE_BREAK
-#define TR_FUN &kp LC(Z)     &kp LC(L)           &kp LC(Y)          &kp LC(U)         &kp LC(RET)    
-#define MR_FUN &kp LC(M)     &hm RSHFT LC(N)     &hm RCTRL LC(H)    &hm LALT LC(I)    &hm RGUI LC(O)
-#define BR_FUN &kp LC(FSLH)  &kp LC(J)           &kp LC(K)          &kp LC(COMMA)     &kp LC(DOT)    
+#define TR_FUN &kp RC(Z)     &kp RC(L)           &kp RC(Y)          &kp RC(U)         &kp RC(RET)    
+#define MR_FUN &kp RC(M)     &hm RSHFT RC(N)     &hm RCTRL RC(H)    &hm LALT LC(I)    &hm RGUI RC(O)
+#define BR_FUN &kp RC(FSLH)  &kp RC(J)           &kp RC(K)          &kp RC(COMMA)     &kp RC(DOT)    
 
 #define THUMBL_FUN &kp K_APP   &trans
 #define THUMBR_FUN &trans   &trans
