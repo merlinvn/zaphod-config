@@ -18,7 +18,7 @@
 #define BL_NAV &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(D)        &kp LC(V)
 #define TR_NAV &kp CAPS    &kp HOME   &kp UARW    &kp END       &kp DEL
 #define MR_NAV &kp K_APP   &kp LARW   &kp DARW    &kp RARW      &caps_word
-#define BR_NAV &kp INS     &kp PG_DN  &kp PG_UP   &alt_tab     &gui_tab
+#define BR_NAV &kp INS     &kp PG_DN  &kp PG_UP   &ctrl_tab     &gui_tab
 
 #define THUMBL_NAV &trans          &trans
 #define THUMBR_NAV &kp LG(SPACE)   &trans
