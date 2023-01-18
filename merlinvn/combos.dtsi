@@ -41,13 +41,27 @@
         layers = <BASE_L>;
     };
     
-    gui_swap_combo1 {
+    gui_tab_combo {
         timeout-ms = <40>;
         key-positions = <TL_RING TL_MIDDLE>;
-        bindings = <&gui_swap>;
+        bindings = <&gui_tab>;
         layers = <NAV_L>;
     };
 
+    ctrl_tab_combo {
+        timeout-ms = <40>;
+        key-positions = <TL_MIDDLE TL_INDEX>;
+        bindings = <&ctrl_tab>;
+        layers = <NAV_L>;
+    };
+    
+    alt_tab_combo {
+        timeout-ms = <40>;
+        key-positions = <BL_MIDDLE BL_INDEX>;
+        bindings = <&alt_tab>;
+        layers = <NAV_L>;
+    };
+    
     exl_combo {
         timeout-ms = <30>;
               key-positions = <TL_MIDDLE TL_INDEX>;
@@ -112,7 +126,7 @@
         timeout-ms = <30>;
               key-positions = <MR_MIDDLE MR_RING>;
               bindings = <&hm RA(RCTRL) BSPC>;
-        layers = <BASE_L>;
+        layers = <BASE_L NAV_L>;
     };
 
     // bottom left start at 24
