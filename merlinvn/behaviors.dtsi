@@ -97,7 +97,7 @@
             compatible = "zmk,behavior-tri-state";
             label = "CTRL-TAB";
             #binding-cells = <0>;
-            bindings = <&kt LCTRL>, <&kp GRAVE>, <&kt LCTRL>;
+            bindings = <&kt LCTRL>, <&kp  TAB>, <&kt LCTRL>;
             ignored-key-positions = <>;
             ignored-layers = <NAV_L>;
         };
