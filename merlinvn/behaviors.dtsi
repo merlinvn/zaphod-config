@@ -66,29 +66,38 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        alt_swap: swapper_0 {
+        alt_tab: swapper_0 {
             compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
+            label = "ALT-TAB";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <26 27 28 17>;
             ignored-layers = <NAV_L>;
         };
 
-        gui_swap: swapper_1 {
+        gui_tab: swapper_1 {
             compatible = "zmk,behavior-tri-state";
-            label = "GUISWAPPER";
+            label = "GUI-TAB";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             ignored-key-positions = <>;
             ignored-layers = <NAV_L>;
         };
 
-        grave_swap: swapper_2 {
+        gui_grave: swapper_2 {
             compatible = "zmk,behavior-tri-state";
-            label = "GRAVESWAPPER";
+            label = "GUI-GRAVE";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
+            ignored-key-positions = <>;
+            ignored-layers = <NAV_L>;
+        };
+        
+        ctrl_tab: swapper_3 {
+            compatible = "zmk,behavior-tri-state";
+            label = "CTRL-TAB";
+            #binding-cells = <0>;
+            bindings = <&kt LCTRL>, <&kp GRAVE>, <&kt LCTRL>;
             ignored-key-positions = <>;
             ignored-layers = <NAV_L>;
         };
