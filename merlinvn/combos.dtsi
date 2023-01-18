@@ -40,6 +40,13 @@
               bindings = <&qu_macro>;
         layers = <BASE_L>;
     };
+    
+    gui_swap_combo1 {
+        timeout-ms = <40>;
+        key-positions = <TL_RING TL_MIDDLE>;
+        bindings = <&gui_swap>;
+        layers = <NAV_L>;
+    };
 
     exl_combo {
         timeout-ms = <30>;
