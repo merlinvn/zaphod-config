@@ -35,12 +35,14 @@
 #define THUMBR_NUM &kp N0      &mo MED_L
 
 
-#define TL_SYM &kp GRAVE     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT
+#define TL_SYM &kp EXCL     &kp AT       &kp LBRC       &kp RBRC      &kp PRCNT
 #define ML_SYM &kp SEMI      &kp EQUAL    &kp LPAR       &kp RPAR      &kp PLUS
 #define BL_SYM &kp DQT       &kp BSLH     &kp LBKT       &kp RBKT      &kp PIPE
-#define TR_SYM &kp STAR   &kp CARET       &kp AMPS     &kp DLLR     &kp RET
+#define TR_SYM &kp HASH   &kp CARET       &kp AMPS     &kp DLLR     &kp STAR
 #define MR_SYM &kp COLON  &sk RSHFT       &sk RCTRL    &sk LALT     &sk RGUI
-#define BR_SYM &kp QMARK  &kp LT          &kp GT       &kp UNDER    &kp TILDE
+#define BR_SYM &kp QMARK  &kp LT          &kp GT       &kp GRAVE    &kp TILDE
+// #define BR_SYM &kp QMARK  &kp MINUS    &kp UNDER       &kp GRAVE    &kp TILDE
+
 
 #define THUMBL_SYM &mo MED_L  &kp SPACE
 #define THUMBR_SYM &trans    &trans
