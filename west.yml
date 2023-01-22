@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: nickconway
       url-base: https://github.com/nickconway
-    - name: merlinvn
-      url-base: https://github.com/merlinvn
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     # - name: zmk
     #   remote: zmkfirmware
@@ -17,9 +17,13 @@ manifest:
     #   remote: nickconway
     #   revision: leader-key
     #   import: app/west.yml
+    # - name: zmk
+    #   remote: nickconway
+    #   revision: smart-interrupt
+    #    import: app/west.yml
     - name: zmk
-      remote: nickconway
-      revision: smart-interrupt
+      remote: urob
+      revision: main
       import: app/west.yml
   self:
     path: config

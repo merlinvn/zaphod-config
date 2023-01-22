@@ -9,11 +9,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#include "../../../zmk-nodefree-config/helper.h"
+#include "./fingers.dtsi"
+
 #include "../../../merlinvn/config.dtsi"
 #include "../../../merlinvn/behaviors.dtsi"
 #include "../../../merlinvn/keymap.dtsi"
 #include "../../../merlinvn/macros.dtsi"
-#include "./fingers.dtsi"
 #include "../../../merlinvn/combos.dtsi"
 
 / {
