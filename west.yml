@@ -17,13 +17,13 @@ manifest:
     #   remote: nickconway
     #   revision: leader-key
     #   import: app/west.yml
-    # - name: zmk
-    #   remote: nickconway
-    #   revision: smart-interrupt
-    #    import: app/west.yml
     - name: zmk
-      remote: urob
-      revision: main
+      remote: nickconway
+      revision: smart-interrupt
       import: app/west.yml
+    # - name: zmk
+    #   remote: urob
+    #   revision: main
+    #   import: app/west.yml
   self:
     path: config
